@@ -1,33 +1,20 @@
-// import { useState } from 'react'
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <h1 className="text-3xl font-bold underline">
-//       Hello world!
-//     </h1>
-//   )
-// }
-
-// export default App
 import { Timeline } from 'react-twitter-widgets';
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
-      <header className="bg-red-600 text-white p-4">
+      <header className="bg-tut-red text-white p-4">
         <h1 className="text-xl md:text-3xl font-bold">TUT-IIC</h1>
         <p>アイコン</p>
       </header>
 
       <nav className="bg-gray-200 p-4 shadow mb-5">
         <ul className="flex justify-around">
-          <li><a href="#about" className="font-medium text-red-600 hover:text-red-800">TUT-IICとは</a></li>
-          <li><a href="#activities" className="font-medium text-red-600 hover:text-red-800">活動内容・スケジュール</a></li>
-          <li><a href="#members" className="font-medium text-red-600 hover:text-red-800">部員の活動</a></li>
-          <li><a href="#contact" className="font-medium text-red-600 hover:text-red-800">関連リンク・連絡先</a></li>
-          <li><a href="#privacy" className="font-medium text-red-600 hover:text-red-800">プライバシーポリシー</a></li>
+          <li><a href="#top" className="font-medium text-tut-red hover:text-red-900">トップページ</a></li>
+          <li><a href="#activities" className="font-medium text-tut-red hover:text-red-900">活動内容・スケジュール</a></li>
+          <li><a href="#members" className="font-medium text-tut-red hover:text-red-900">部員の活動</a></li>
+          <li><a href="#contact" className="font-medium text-tut-red hover:text-red-900">関連リンク・連絡先</a></li>
+          <li><a href="#privacy" className="font-medium text-tut-red hover:text-red-900">プライバシーポリシー</a></li>
         </ul>
       </nav>
 
