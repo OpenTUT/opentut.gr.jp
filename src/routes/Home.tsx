@@ -1,13 +1,15 @@
 import { Timeline } from 'react-twitter-widgets'
 import { Link } from 'react-router-dom';
 
+import Slider from '../components/Slider'
+
 function Home() {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       <div className="container mx-auto px-5 py-10">
-        {/* <div>
-          <p>画像数枚がスライドショーで入れ替わるやつ</p>
-        </div> */}
+        <div id="slider" className="bg-white shadow-md mb-5 mx-2">
+          <Slider />
+        </div>
 
         <main>
           <section id="about" className="p-4 bg-white shadow-md mb-5 mx-2 border-2 border-t-tut-red">
