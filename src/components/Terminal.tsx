@@ -8,7 +8,7 @@ function Terminal(){
   const endRef = useRef<null | HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    endRef.current?.scrollIntoView({ behavior: 'smooth' });
+    endRef.current?.scrollIntoView({ behavior: 'instant' });
   };
 
   useEffect(() => {
