@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import TUTIICIcon from '../assets/TUT_IIC_icon_tmp.jpg'
+import TUTIICIcon from '../assets/TUT_IIC_icon_tmp.jpg';
 
 function Header() {
     return (

@@ -3,14 +3,14 @@ import {
     Route,
     Routes,
     type RouteProps,
-  } from "react-router-dom"
-  import Header from './components/Header'
-  import Footer from './components/Footer'
-  import Slider from './components/Slider'
-  import Home from './routes/Home'
-  import Activities from './routes/Activities'
-  import Members from './routes/Members'
-  import Privacy from './routes/Privacy'
+  } from "react-router-dom";
+  import Header from './components/Header';
+  import Footer from './components/Footer';
+  import Slider from './components/Slider';
+  import Home from './routes/Home';
+  import Activities from './routes/Activities';
+  import Members from './routes/Members';
+  import Privacy from './routes/Privacy';
 
   const routes = [
     {

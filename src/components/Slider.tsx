@@ -1,13 +1,13 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Navigation, Pagination} from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import Slider1 from '../assets/Slider1.png'
-import Slider2 from '../assets/Slider2.png'
-import Slider3 from '../assets/Slider3.png'
-import Slider4 from '../assets/Slider2.png'
+import Slider1 from '../assets/Slider1.png';
+import Slider2 from '../assets/Slider2.png';
+import Slider3 from '../assets/Slider3.png';
+import Slider4 from '../assets/Slider2.png';
 
 interface ImageSlide {
   src: string;
@@ -21,7 +21,7 @@ const images: ImageSlide[] = [
   { src: Slider4, alt: 'image 4' },
 ];
 
-const Slider = () => {
+function Slider() {
   return (
     <Swiper
     className="

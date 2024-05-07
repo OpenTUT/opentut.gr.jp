@@ -1,7 +1,8 @@
-import { Timeline } from 'react-twitter-widgets'
+import { Timeline } from 'react-twitter-widgets';
 import { Link } from 'react-router-dom';
 
-import Slider from '../components/Slider'
+import Slider from '../components/Slider';
+import Terminal from '../components/Terminal';
 
 function Home() {
   return (
@@ -47,16 +48,21 @@ function Home() {
             </section>
           </div>
 
-          <div className="w-1/4 mb-5 mx-2">
-            <Timeline
-              dataSource={{
-                sourceType: 'profile',
-                screenName: 'TUT_IIC'
-              }}
-              options={{
-                height: '800'
-              }}
-            />
+          <div className="flex flex-wrap justify-around items-stretch w-full">
+            <div className="flex-1 p-4 mb-5 min-w-0">
+              <Timeline
+                dataSource={{
+                  sourceType: 'profile',
+                  screenName: 'TUT_IIC'
+                }}
+                options={{
+                  height: '600'
+                }}
+              />
+            </div>
+            <div className="flex-1 p-4 mb-5 min-w-0">
+              <Terminal />
+            </div>
           </div>
 
         </main>
