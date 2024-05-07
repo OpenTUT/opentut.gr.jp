@@ -7,13 +7,13 @@ function Terminal(){
   ]);
   const endRef = useRef<null | HTMLDivElement>(null);
 
-  const scrollToBottom = () => {
-    endRef.current?.scrollIntoView({ behavior: 'instant' });
-  };
+//   const scrollToBottom = () => {
+//     endRef.current?.scrollIntoView({ behavior: 'instant' });
+//   };
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [responses]);
+//   useEffect(() => {
+//     scrollToBottom();
+//   }, [responses]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
