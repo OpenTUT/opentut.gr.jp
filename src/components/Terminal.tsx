@@ -5,15 +5,21 @@ function Terminal(){
   const [responses, setResponses] = useState<React.ReactNode[]>([
     "Welcome! Please enter the \"help\" command."
   ]);
+  const [isInitialMount, setIsInitialMount] = useState(true);
   const endRef = useRef<null | HTMLDivElement>(null);
 
-//   const scrollToBottom = () => {
-//     endRef.current?.scrollIntoView({ behavior: 'instant' });
-//   };
+  const scrollToBottom = () => {
+    if (!isInitialMount) {
+      endRef.current?.scrollIntoView({ behavior: 'instant' });
+    }
+  };
 
-//   useEffect(() => {
-//     scrollToBottom();
-//   }, [responses]);
+  useEffect(() => {
+    scrollToBottom();
+    if (isInitialMount) {
+      setIsInitialMount(false);
+    }
+  }, [responses]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
