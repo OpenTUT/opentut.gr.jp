@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import Slider1 from '../assets/Slider1.png';
 import Slider2 from '../assets/Slider2.png';
 import Slider3 from '../assets/Slider3.png';
-import Slider4 from '../assets/Slider2.png';
+import Slider4 from '../assets/Slider4.png';
 
 interface ImageSlide {
   src: string;

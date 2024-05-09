@@ -15,7 +15,7 @@ function Home() {
         <main>
           <section id="about" className="p-4 bg-white shadow-md mb-5 mx-2 border-2 border-t-tut-red">
             <h2 className="text-2xl font-bold mb-3">TUT-IICとは</h2>
-            <p>TUT-IIC(Toyohashi University of Technology - Information Infrastructure Club)は、学生の大学生活を快適にするための情報基盤を整える、有志の団体です。</p><br />
+            <p>TUT-IIC(TUT - Information Infrastructure Club)は、学生の大学生活を快適にするための情報基盤を整える、有志の団体です。</p><br />
             <p>豊橋技科大生の学生生活を支える、時間割アプリの「TUTility」をリリースし、日々改善や機能追加をしています。</p><br />
             <p>また、プログラミングの経験が浅い方や、チームでの開発をしてみたい方が気軽に参加できる場所を作ることを目的としており、これを実現するためのメンバーを募集中です。</p><br />
             <p>現在、週1回の対面による活動で、自分の紹介したい技術を発表するLT会と、自分の学びたいことやReactのチュートリアルを行う勉強会を開催しています。</p><br />

@@ -9,7 +9,7 @@ function Header() {
             <Link to="/" className="font-medium hover:text-gray-300">
                 <div className="flex items-center">
                     <img src={TUTIICIcon} className="logo w-16 h-16 mr-2" />
-                    <h1 className="text-3xl font-bold ml-2">Toyohashi University of Technology - Information Infrastructure Club</h1>
+                    <h1 className="text-3xl font-bold ml-2">TUT - Information Infrastructure Club</h1>
                 </div>
             </Link>
             <nav>

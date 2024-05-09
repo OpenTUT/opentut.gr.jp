@@ -6,7 +6,9 @@ function Activities() {
           <section id="about" className="p-4 bg-white shadow-md mb-5 mx-2 border-2 border-t-tut-red">
             <h2 className="text-2xl font-bold mb-3">活動内容・スケジュール</h2>
             <p>週1回、対面でLT会と勉強会を開催しています。</p><br />
-              <p>毎週木曜日の16:30-19:00に、図書館2階の「グループ研究室1」で活動しています(曜日変更あり)。</p>
+            <p>毎週木曜日の16:30-19:00に、図書館2階の「グループ研究室1」で活動しています(曜日変更あり)。</p><br />
+            <p>途中入室や途中退室は自由ですので、お気軽にお越しください。</p><br />
+            <p>必ず何かのプロジェクトにかかわらないといけないということはなく、見学するだけでも構いません。</p>
           </section>
         </main>
       </div>
