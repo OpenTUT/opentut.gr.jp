@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+import SakuraFall from './SakuraFall';
+
 function Terminal(){
   const [input, setInput] = useState('');
   const [responses, setResponses] = useState<React.ReactNode[]>([
@@ -44,6 +46,7 @@ function Terminal(){
             <p>dog - Print a dog emoji.</p>
             <p>clear - Clear the terminal.</p>
             <p>help - Show this help message.</p>
+            <p>sakura - This is spring in Japan.</p>
           </>
         );
         break;
@@ -51,6 +54,9 @@ function Terminal(){
         setResponses([]);
         setInput('');
         return;
+      case 'sakura':
+        response = <SakuraFall />;
+        break;
       default:
         response = '"' + input.trim() + '" is not a command. Try typing the command "help".';
         break;

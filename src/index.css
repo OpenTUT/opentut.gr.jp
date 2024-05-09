@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+.sakura {
+    position: absolute;
+    animation: fall linear infinite;
+    will-change: transform;
+    color: rgba(255, 182, 193, 0.3);
+}
+
+.sakura-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
