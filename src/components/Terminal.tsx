@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import SakuraFall from './SakuraFall';
+import { SakuraFall } from './SakuraFall';
 
-function Terminal(){
+export function Terminal() {
   const [input, setInput] = useState('');
   const [responses, setResponses] = useState<React.ReactNode[]>([
-    "Welcome! Please enter the \"help\" command."
+    'Welcome! Please enter the "help" command.',
   ]);
   const [isInitialMount, setIsInitialMount] = useState(true);
   const endRef = useRef<null | HTMLDivElement>(null);
@@ -58,18 +58,23 @@ function Terminal(){
         response = <SakuraFall />;
         break;
       default:
-        response = '"' + input.trim() + '" is not a command. Try typing the command "help".';
+        response =
+          '"' +
+          input.trim() +
+          '" is not a command. Try typing the command "help".';
         break;
     }
 
-    setResponses(responses => [...responses, `$ ${input}`, response]);
+    setResponses((responses) => [...responses, `$ ${input}`, response]);
     setInput('');
   };
 
   return (
     <div className="bg-black text-white font-mono w-full max-w-4xl h-[600px] p-4 overflow-auto">
       {responses.map((res, idx) => (
-        <div key={idx} className="mb-1">{res}</div>
+        <div key={idx} className="mb-1">
+          {res}
+        </div>
       ))}
       <div ref={endRef} />
       <div className="flex">
@@ -86,6 +91,4 @@ function Terminal(){
       </div>
     </div>
   );
-};
-
-export default Terminal;
+}

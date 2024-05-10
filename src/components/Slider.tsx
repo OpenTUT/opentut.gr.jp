@@ -1,30 +1,18 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination} from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-import Slider1 from '../assets/Slider1.png';
-import Slider2 from '../assets/Slider2.png';
-import Slider3 from '../assets/Slider3.png';
-import Slider4 from '../assets/Slider4.png';
 
 interface ImageSlide {
   src: string;
   alt: string;
 }
 
-const images: ImageSlide[] = [
-  { src: Slider1, alt: 'image 1' },
-  { src: Slider2, alt: 'image 2' },
-  { src: Slider3, alt: 'image 3' },
-  { src: Slider4, alt: 'image 4' },
-];
-
-function Slider() {
+export function Slider({ images }: { images: ImageSlide[] }) {
   return (
     <Swiper
-    className="
+      className="
       [&_.swiper-pagination-bullet-active]:!bg-tut-red
       [&_.swiper-pagination-bullet]:h-[11px]
       [&_.swiper-pagination-bullet]:w-[11px]
@@ -38,20 +26,22 @@ function Slider() {
       slidesPerView={3}
       spaceBetween={5}
       autoplay={{
-        delay:2500,
+        delay: 2500,
         pauseOnMouseEnter: true,
         disableOnInteraction: false,
-    }}
+      }}
       speed={800}
       loop={true}
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
-          <img src={image.src} alt={image.alt} style={{ width: '100%', height: 'auto' }} />
+          <img
+            src={image.src}
+            alt={image.alt}
+            style={{ width: '100%', height: 'auto' }}
+          />
         </SwiperSlide>
       ))}
     </Swiper>
   );
-};
-
-export default Slider;
+}
