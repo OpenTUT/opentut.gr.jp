@@ -3,23 +3,31 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Slider1, Slider2, Slider3, Slider4 } from '../assets';
 
 interface ImageSlide {
   src: string;
   alt: string;
 }
 
-export function Slider({ images }: { images: ImageSlide[] }) {
+const images: ImageSlide[] = [
+  { src: Slider1.src, alt: 'image 1' },
+  { src: Slider2.src, alt: 'image 2' },
+  { src: Slider3.src, alt: 'image 3' },
+  { src: Slider4.src, alt: 'image 4' },
+];
+
+export function Slider() {
   return (
     <Swiper
       className="
-      [&_.swiper-pagination-bullet-active]:!bg-tut-red
-      [&_.swiper-pagination-bullet]:h-[11px]
-      [&_.swiper-pagination-bullet]:w-[11px]
-      [&_.swiper-pagination-bullet]:bg-gray-200
-      [&_.swiper-button-prev::after]:text-tut-red
-      [&_.swiper-button-next::after]:text-tut-red
-    "
+        [&_.swiper-pagination-bullet-active]:!bg-tut-red
+        [&_.swiper-pagination-bullet]:h-[11px]
+        [&_.swiper-pagination-bullet]:w-[11px]
+        [&_.swiper-pagination-bullet]:bg-gray-200
+        [&_.swiper-button-prev::after]:text-tut-red
+        [&_.swiper-button-next::after]:text-tut-red
+      "
       modules={[Autoplay, Navigation, Pagination]}
       navigation
       pagination={{ clickable: true }}
@@ -32,6 +40,20 @@ export function Slider({ images }: { images: ImageSlide[] }) {
       }}
       speed={800}
       loop={true}
+      breakpoints={{
+        // 320px以上
+        320: {
+          slidesPerView: 1,
+        },
+        // 480px以上
+        480: {
+          slidesPerView: 1,
+        },
+        // 640px以上
+        640: {
+          slidesPerView: 3,
+        },
+      }}
     >
       {images.map((image, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>

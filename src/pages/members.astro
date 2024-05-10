@@ -1,5 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+interface ListItem {
+  id: number;
+  text: string;
+  subItems?: ListItem[];
+}
+
+const LTItems: ListItem[] = [
+  { id: 1, text: 'Node.js + WebSocketでピクトチャットをつくる - 昨日' },
+  { id: 2, text: 'TUTilityの構造 - りn' },
+];
+
+const WipItems: ListItem[] = [
+  { id: 1, text: 'Reactチュートリアル' },
+  {
+    id: 2,
+    text: '構内マップの作成',
+    subItems: [
+      { id: 21, text: '現在地の表示' },
+      { id: 22, text: '建物や地名を柔軟に表示' },
+    ],
+  },
+];
 ---
 
 <Layout title="部員の活動 | TUT-IIC">
@@ -12,9 +35,39 @@ import Layout from '../layouts/Layout.astro';
         >
           <h2 class="text-2xl font-bold mb-3">部員の活動</h2>
           <p>部員がLT会で発表した技術について紹介しています。</p><br />
-          <p>
-            勉強会や、取り組んでいるプロジェクトについての紹介もしています。
-          </p>
+          <p>勉強会や、進行中のプロジェクトについての紹介もしています。</p><br
+          /><br /><br />
+
+          <h3 class="text-xl font-bold mb-3">LT会</h3>
+          <ul class="list-disc pl-5">
+            {
+              LTItems.map((item) => (
+                <li class="mb-5">
+                  {item.text}
+                  <br />
+                </li>
+              ))
+            }
+          </ul><br /><br />
+
+          <h3 class="text-xl font-bold mb-3">進行中のプロジェクト</h3>
+          <ul class="list-disc pl-5">
+            {
+              WipItems.map((item) => (
+                <li class="mb-5">
+                  {item.text}
+                  <br />
+                  {item.subItems && (
+                    <ul class="list-disc pl-10">
+                      {item.subItems.map((subItem) => (
+                        <li class="mb-5">{subItem.text}</li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))
+            }
+          </ul>
         </section>
       </main>
     </div>
