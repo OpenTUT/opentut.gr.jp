@@ -1,26 +1,33 @@
 import { getImage } from 'astro:assets';
-import _Slider1 from '../assets/Slider1.png';
-import _Slider2 from '../assets/Slider2.png';
-import _Slider3 from '../assets/Slider3.png';
-import _Slider4 from '../assets/Slider4.png';
-export { default as TUTIICLogo } from './tut_iic_logo.svg';
+import type { UnresolvedImageTransform } from 'astro';
 
-export const Slider1 = await getImage({
-  src: _Slider1,
+import _Slider1 from './Slider1.png';
+import _Slider2 from './Slider2.png';
+import _Slider3 from './Slider3.png';
+import _Slider4 from './Slider4.png';
+import _TUTIICLogo from './tut_iic_logo.svg';
+
+async function optimizeImage(
+  image: ImageMetadata,
+  options?: Omit<UnresolvedImageTransform, 'src'>,
+) {
+  return (await getImage({ src: image, ...options })).src;
+}
+
+export const TUTIICLogo = await optimizeImage(_TUTIICLogo);
+
+export const Slider1 = await optimizeImage(_Slider1, {
   width: 1920,
 });
 
-export const Slider2 = await getImage({
-  src: _Slider2,
+export const Slider2 = await optimizeImage(_Slider2, {
   width: 1920,
 });
 
-export const Slider3 = await getImage({
-  src: _Slider3,
+export const Slider3 = await optimizeImage(_Slider3, {
   width: 1920,
 });
 
-export const Slider4 = await getImage({
-  src: _Slider4,
+export const Slider4 = await optimizeImage(_Slider4, {
   width: 1920,
 });

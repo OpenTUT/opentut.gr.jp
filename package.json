@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "biome lint --apply .",
+    "biome": "biome check --apply .",
     "format": "prettier --write ."
   },
   "dependencies": {
