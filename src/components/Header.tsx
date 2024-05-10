@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+import { useState } from 'react';
 import { TUTIICLogo } from '../assets';
 
 export function Header() {
@@ -31,7 +31,9 @@ export function Header() {
         </button>
       </div>
       <nav
-        className={`${isOpen ? 'transform -translate-y-0' : 'transform -translate-y-full'} absolute top-0 left-0 w-full bg-tut-red sm:static sm:w-auto sm:block sm:transform-none transition-transform duration-300 ease-out z-20`}
+        className={`${
+          isOpen ? 'transform -translate-y-0' : 'transform -translate-y-full'
+        } absolute top-0 left-0 w-full bg-tut-red sm:static sm:w-auto sm:block sm:transform-none transition-transform duration-300 ease-out z-20`}
       >
         <ul className="flex flex-col sm:flex-row justify-around sm:items-center">
           <li>
