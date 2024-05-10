@@ -1,13 +1,9 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-import Slider1 from '../assets/Slider1.png';
-import Slider2 from '../assets/Slider2.png';
-import Slider3 from '../assets/Slider3.png';
-import Slider4 from '../assets/Slider4.png';
+import { Slider1, Slider2, Slider3, Slider4 } from '../assets';
 
 interface ImageSlide {
   src: string;
@@ -15,13 +11,13 @@ interface ImageSlide {
 }
 
 const images: ImageSlide[] = [
-  { src: Slider1, alt: 'image 1' },
-  { src: Slider2, alt: 'image 2' },
-  { src: Slider3, alt: 'image 3' },
-  { src: Slider4, alt: 'image 4' },
+  { src: Slider1.src, alt: 'image 1' },
+  { src: Slider2.src, alt: 'image 2' },
+  { src: Slider3.src, alt: 'image 3' },
+  { src: Slider4.src, alt: 'image 4' },
 ];
 
-function Slider() {
+export function Slider() {
   return (
     <Swiper
       className="
@@ -56,16 +52,19 @@ function Slider() {
         // 640px以上
         640: {
           slidesPerView: 3,
-        }
+        },
       }}
     >
       {images.map((image, index) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
         <SwiperSlide key={index}>
-          <img src={image.src} alt={image.alt} style={{ width: '100%', height: 'auto' }} />
+          <img
+            src={image.src}
+            alt={image.alt}
+            style={{ width: '100%', height: 'auto' }}
+          />
         </SwiperSlide>
       ))}
     </Swiper>
   );
-};
-
-export default Slider;
+}
