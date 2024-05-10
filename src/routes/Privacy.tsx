@@ -5,13 +5,12 @@ function Privacy() {
         <main>
           <section id="about" className="p-4 bg-white shadow-md mb-5 mx-2 border-2 border-t-tut-red">
             <h2 className="text-2xl font-bold mb-3">プライバシーポリシー</h2>
-            <p>test</p><br />
-            <p>TUTilityのプライバシーポリシーを載せています。</p>
+            <p>TUTilityのプライバシーポリシーを載せています。</p><br />
           </section>
         </main>
       </div>
     </div>
   );
 }
-  
- export default Privacy;
+
+export default Privacy;

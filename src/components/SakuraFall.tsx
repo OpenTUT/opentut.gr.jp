@@ -3,7 +3,7 @@ import React from 'react';
 type SakuraProps = {
     style: React.CSSProperties;
 };
-  
+
 const Sakura: React.FC<SakuraProps> = ({ style }) => {
     return (
         <div style={style} className="sakura text-3xl">🌸</div>

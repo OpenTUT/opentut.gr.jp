@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import SakuraFall from './SakuraFall';
 
-function Terminal(){
+function Terminal() {
   const [input, setInput] = useState('');
   const [responses, setResponses] = useState<React.ReactNode[]>([
     "Welcome! Please enter the \"help\" command."
