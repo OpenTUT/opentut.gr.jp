@@ -11,10 +11,10 @@ interface ImageSlide {
 }
 
 const images: ImageSlide[] = [
-  { src: Slider1.src, alt: 'image 1' },
-  { src: Slider2.src, alt: 'image 2' },
-  { src: Slider3.src, alt: 'image 3' },
-  { src: Slider4.src, alt: 'image 4' },
+  { src: Slider1, alt: 'image 1' },
+  { src: Slider2, alt: 'image 2' },
+  { src: Slider3, alt: 'image 3' },
+  { src: Slider4, alt: 'image 4' },
 ];
 
 export function Slider() {

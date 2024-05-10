@@ -12,7 +12,7 @@ export function Header() {
       <a href="/" className="font-medium hover:text-gray-300">
         <div className="flex items-center">
           <img
-            src={TUTIICLogo.src}
+            src={TUTIICLogo}
             alt="TUTIIC Logo"
             className="logo w-16 h-16 mr-2"
           />
