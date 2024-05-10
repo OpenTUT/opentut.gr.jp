@@ -8,21 +8,6 @@ export function Terminal() {
   const [responses, setResponses] = useState<React.ReactNode[]>([
     'Welcome! Please enter the "help" command.',
   ]);
-  const [isInitialMount, setIsInitialMount] = useState(true);
-  const endRef = useRef<null | HTMLDivElement>(null);
-
-  const scrollToBottom = () => {
-    if (!isInitialMount) {
-      endRef.current?.scrollIntoView({ behavior: 'instant' });
-    }
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-    if (isInitialMount) {
-      setIsInitialMount(false);
-    }
-  }, [isInitialMount, scrollToBottom]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
@@ -75,7 +60,6 @@ export function Terminal() {
           {res}
         </div>
       ))}
-      <div ref={endRef} />
       <div className="flex">
         <span className="text-tut-red mr-2">{'$'}</span>
         <form onSubmit={handleSubmit} className="w-full">
