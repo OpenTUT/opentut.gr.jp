@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "biome": "biome check --apply .",
-    "format": "prettier --write ."
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/check": "^0.6.0",
