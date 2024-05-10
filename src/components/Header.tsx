@@ -65,11 +65,11 @@ export function Header() {
           </li>
           <li>
             <a
-              href="/privacy"
+              href="/tutility"
               className="font-medium hover:text-gray-300 block px-4 py-2 sm:ml-5 sm:px-0"
               onClick={closeMenu}
             >
-              プライバシーポリシー
+              TUTility
             </a>
           </li>
           <li>
