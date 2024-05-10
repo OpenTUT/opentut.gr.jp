@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import type React from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { SakuraFall } from './SakuraFall';
 
@@ -21,7 +22,7 @@ export function Terminal() {
     if (isInitialMount) {
       setIsInitialMount(false);
     }
-  }, [responses]);
+  }, [isInitialMount, scrollToBottom]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
@@ -58,10 +59,7 @@ export function Terminal() {
         response = <SakuraFall />;
         break;
       default:
-        response =
-          '"' +
-          input.trim() +
-          '" is not a command. Try typing the command "help".';
+        response = `"${input.trim()}" is not a command. Try typing the command "help".`;
         break;
     }
 
@@ -72,6 +70,7 @@ export function Terminal() {
   return (
     <div className="bg-black text-white font-mono w-full max-w-4xl h-[600px] p-4 overflow-auto">
       {responses.map((res, idx) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
         <div key={idx} className="mb-1">
           {res}
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 interface SakuraProps {
   style: React.CSSProperties;
@@ -19,7 +19,7 @@ export function SakuraFall() {
     style: {
       animationDelay: `${-Math.random() * 5}s`, // マイナス値を設定してアニメーションを即時開始
       animationDuration: `${5 + Math.random() * 5}s`, // アニメーションの継続時間をランダム化
-      top: `0px`,
+      top: '0px',
       left: `${Math.random() * 100}%`, // 左の位置はランダムに画面全体
     },
   }));

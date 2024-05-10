@@ -1,5 +1,5 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -34,6 +34,7 @@ export function Slider({ images }: { images: ImageSlide[] }) {
       loop={true}
     >
       {images.map((image, index) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
         <SwiperSlide key={index}>
           <img
             src={image.src}
