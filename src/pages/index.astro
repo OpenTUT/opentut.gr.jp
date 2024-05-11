@@ -1,15 +1,27 @@
 ---
+import { getImage } from 'astro:assets';
 import { Timeline } from 'react-twitter-widgets';
+import Slider1 from '../assets/Slider1.png';
+import Slider2 from '../assets/Slider2.png';
+import Slider3 from '../assets/Slider3.png';
+import Slider4 from '../assets/Slider4.png';
 import { Slider } from '../components/Slider';
 import { Terminal } from '../components/Terminal';
 import Layout from '../layouts/Layout.astro';
+
+const images = [
+  { src: (await getImage({ src: Slider1, width: 1920 })).src, alt: 'image 1' },
+  { src: (await getImage({ src: Slider2, width: 1920 })).src, alt: 'image 2' },
+  { src: (await getImage({ src: Slider3, width: 1920 })).src, alt: 'image 3' },
+  { src: (await getImage({ src: Slider4, width: 1920 })).src, alt: 'image 4' },
+];
 ---
 
 <Layout title="TUT-IIC">
   <div class="min-h-screen bg-gray-100 text-gray-800">
     <div class="container mx-auto px-5 py-10">
       <div id="slider" class="bg-white shadow-md mb-5 mx-2">
-        <Slider client:load />
+        <Slider client:load images={images} />
       </div>
 
       <main>

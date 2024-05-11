@@ -3,21 +3,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Slider1, Slider2, Slider3, Slider4 } from '../assets';
 
-interface ImageSlide {
-  src: string;
-  alt: string;
+interface SliderProps {
+  images: {
+    src: string;
+    alt: string;
+  }[];
 }
 
-const images: ImageSlide[] = [
-  { src: Slider1, alt: 'image 1' },
-  { src: Slider2, alt: 'image 2' },
-  { src: Slider3, alt: 'image 3' },
-  { src: Slider4, alt: 'image 4' },
-];
-
-export function Slider() {
+export function Slider({ images }: SliderProps) {
   return (
     <Swiper
       className="
@@ -55,9 +49,8 @@ export function Slider() {
         },
       }}
     >
-      {images.map((image, index) => (
-        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-        <SwiperSlide key={index}>
+      {images.map((image) => (
+        <SwiperSlide key={image.src}>
           <img
             src={image.src}
             alt={image.alt}

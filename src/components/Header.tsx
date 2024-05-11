@@ -1,6 +1,6 @@
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
-import { TUTIICLogo } from '../assets';
+import TUTIICLogo from '../assets/tut_iic_logo.svg';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ export function Header() {
       <a href="/" className="font-medium hover:text-gray-300">
         <div className="flex items-center">
           <img
-            src={TUTIICLogo}
+            src={TUTIICLogo.src}
             alt="TUTIIC Logo"
             className="logo w-16 h-16 mr-2"
           />
