@@ -6,7 +6,7 @@ import { SakuraFall } from './SakuraFall';
 export function Terminal() {
   const [input, setInput] = useState('');
   const [responses, setResponses] = useState<React.ReactNode[]>([
-    'Welcome! Please enter the "help" command.',
+    'Welcome! Please type the "help" command.',
   ]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,9 +28,9 @@ export function Terminal() {
         response = (
           <>
             <p>Available commands:</p>
-            <p>hello - Print Hello, World!</p>
+            <p>hello - Print "Hello, World!".</p>
             <p>dog - Print a dog emoji.</p>
-            <p>clear - Clear the terminal.</p>
+            <p>clear - Clear the terminal and effects.</p>
             <p>help - Show this help message.</p>
             <p>sakura - This is spring in Japan.</p>
           </>
