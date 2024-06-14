@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title="Article | TUT-IIC">
+  <div class="min-h-screen bg-gray-100 text-gray-800">
+    <div class="container mx-auto px-5 py-10">
+      <h1>{frontmatter.title}</h1>
+      <div
+        class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-6xl mt-10 border-t-8 border-red-700"
+      >
+        <h1 class="text-5xl font-bold mb-4 text-black">
+          {frontmatter.title}
+        </h1>
+        <h2 class="text-2xl font-semibold mb-4 text-red-700 text-right">
+          by {frontmatter.author}
+        </h2>
+        <div class="markdown-body">
+          <slot />
+        </div>
+        <p class="text-xl text-gray-500 mt-8 text-right">
+          Written on: {frontmatter.date}
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
