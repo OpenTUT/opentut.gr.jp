@@ -8,13 +8,13 @@ export function Header() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="p-4 flex justify-between items-center relative border-b-4 border-b-tut-red">
+    <header className="p-4 flex bg-white justify-between items-center relative border-b-4 border-b-tut-red">
       <a href="/" className="font-medium hover:text-gray-300">
         <div className="flex items-center">
           <img
             src={OpenTUTLogo.src}
             alt="OpenTUT Logo"
-            className="logo h-16 mr-2 bg-white rounded-md"
+            className="logo h-16 mr-2"
           />
         </div>
       </a>
@@ -30,7 +30,7 @@ export function Header() {
       <nav
         className={`${
           isOpen ? 'transform -translate-y-0' : 'transform -translate-y-full'
-        } absolute top-0 left-0 w-full sm:static sm:w-auto sm:block sm:transform-none transition-transform duration-300 ease-out z-20`}
+        } absolute top-0 left-0 w-full sm:static sm:w-auto sm:block sm:transform-none transition-transform duration-300 ease-out z-20 bg-white`}
       >
         <ul className="flex flex-col sm:flex-row justify-around sm:items-center">
           <li>
