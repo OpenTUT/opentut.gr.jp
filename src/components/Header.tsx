@@ -71,7 +71,7 @@ export function Header() {
           </li>
           <li>
             <a
-              href="https://twitter.com/TUT_IIC"
+              href="https://twitter.com/OpenTUT_info"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium hover:text-gray-300 block px-4 py-2 sm:ml-2 sm:mr-2"
