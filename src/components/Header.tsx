@@ -1,6 +1,6 @@
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
-import TUTIICLogo from '../assets/tut_iic_logo.svg';
+import OpenTUTLogo from '../assets/opentut_logo_large.svg';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,17 +8,14 @@ export function Header() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="bg-tut-red text-white p-4 flex justify-between items-center relative">
+    <header className="p-4 flex justify-between items-center relative border-b-4 border-b-tut-red">
       <a href="/" className="font-medium hover:text-gray-300">
         <div className="flex items-center">
           <img
-            src={TUTIICLogo.src}
-            alt="TUTIIC Logo"
-            className="logo w-16 h-16 mr-2"
+            src={OpenTUTLogo.src}
+            alt="OpenTUT Logo"
+            className="logo h-16 mr-2 bg-white rounded-md"
           />
-          <h1 className="text-3xl font-bold ml-2 hidden sm:block">
-            TUT - Information Infrastructure Club
-          </h1>
         </div>
       </a>
       <div className="sm:hidden z-30">
@@ -33,7 +30,7 @@ export function Header() {
       <nav
         className={`${
           isOpen ? 'transform -translate-y-0' : 'transform -translate-y-full'
-        } absolute top-0 left-0 w-full bg-tut-red sm:static sm:w-auto sm:block sm:transform-none transition-transform duration-300 ease-out z-20`}
+        } absolute top-0 left-0 w-full sm:static sm:w-auto sm:block sm:transform-none transition-transform duration-300 ease-out z-20`}
       >
         <ul className="flex flex-col sm:flex-row justify-around sm:items-center">
           <li>
