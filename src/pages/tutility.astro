@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from './consts';
 ---
 
-<Layout title="TUTility | OpenTUT">
+<Layout title={`TUTility | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
   <div class="min-h-screen bg-gray-100 text-gray-800">
     <div class="container mx-auto px-5 py-10">
       <main>

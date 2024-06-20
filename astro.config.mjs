@@ -5,6 +5,7 @@ import behead from 'remark-behead';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://opentut.gr.jp',
   integrations: [react(), tailwind()],
   markdown: {
     remarkPlugins: [[behead, { minDepth: 2 }]],

@@ -5,7 +5,7 @@ const projects = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      description: z.string().optional(),
+      description: z.string(),
       author: z.string(),
       date: z.coerce.date(),
       image: z
@@ -22,7 +22,7 @@ const posts = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      description: z.string().optional(),
+      description: z.string(),
       author: z.string(),
       date: z.coerce.date(),
       image: z
