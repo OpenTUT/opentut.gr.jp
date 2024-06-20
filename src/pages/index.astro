@@ -12,6 +12,7 @@ import Base from '../layouts/Base.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import Card from '../components/Card.astro';
 import { SCHEDULE, toDurationString } from '../schedule';
+import { IconPlayerPlayFilled } from '@tabler/icons-react';
 
 const images = [
   { src: (await getImage({ src: Slider1, width: 720 })).src, alt: 'image 1' },
@@ -39,12 +40,12 @@ const images = [
           TUTilityのほかにも、学生生活を支える新規プロジェクトを開発中です。興味のある方は、ページ上部の𝕏(旧Twitter)へご連絡ください。
         </p>
       </div>
-
       <a
         href="/about"
-        class="rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:text-tut-red"
+        class="flex items-center justify-center gap-1 rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:bg-gray-100 hover:text-tut-red"
       >
-        <span class="text-red-600">▶</span> もっと詳しく
+        <span class="text-tut-red"><IconPlayerPlayFilled /></span>
+        <div><span class="align-middle">もっと詳しく</span></div>
       </a>
     </Card>
 
@@ -56,9 +57,10 @@ const images = [
         </div>
         <a
           href="/projects"
-          class="rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:text-tut-red"
+          class="flex items-center justify-center gap-1 rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:bg-gray-100 hover:text-tut-red"
         >
-          <span class="text-red-600">▶</span> プロジェクト紹介へ
+          <span class="text-tut-red"><IconPlayerPlayFilled /></span>
+          <div><span class="align-middle">プロジェクト紹介へ</span></div>
         </a>
       </Card>
 
@@ -69,9 +71,10 @@ const images = [
         </div>
         <a
           href="/archive"
-          class="rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:text-tut-red"
+          class="flex items-center justify-center gap-1 rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:bg-gray-100 hover:text-tut-red"
         >
-          <span class="text-red-600">▶</span> 記事一覧へ
+          <span class="text-tut-red"><IconPlayerPlayFilled /></span>
+          <div><span class="align-middle">記事一覧へ</span></div>
         </a>
       </Card>
 
