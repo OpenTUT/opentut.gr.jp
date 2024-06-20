@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 
 const projects = (await getCollection('projects')).sort(
@@ -50,11 +51,13 @@ const posts = (await getCollection('posts')).sort(
               posts.map((post) => (
                 <article>
                   <div class="flex h-full w-96 max-w-sm flex-col rounded-lg border border-gray-200 bg-white shadow">
-                    <img
-                      src={post.data.image?.url}
-                      alt={post.data.image?.alt}
-                      class="rounded-t-lg"
-                    />
+                    {post.data.image ? (
+                      <Image
+                        src={post.data.image.url}
+                        alt={post.data.image.alt}
+                        class="aspect-video rounded-t-lg object-cover"
+                      />
+                    ) : null}
                     <div class="flex-grow p-5">
                       <h2 class="mb-2 text-2xl font-bold text-gray-800">
                         {post.data.title}

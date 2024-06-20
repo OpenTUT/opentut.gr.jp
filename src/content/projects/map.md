@@ -3,9 +3,6 @@ title: 'キャンパスマップの作成'
 description: ''
 author: 'org'
 date: '14 June 2024'
-image:
-  url: /src/assets/posts/Slider.png
-  alt: ''
 ---
 
 ## 概要
