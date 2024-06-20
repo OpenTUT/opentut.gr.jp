@@ -1,8 +1,7 @@
 ---
 title: 'キャンパスマップの作成'
 description: ''
-author: 'org'
-date: '14 June 2024'
+pubDate: '14 June 2024'
 ---
 
 ## 概要

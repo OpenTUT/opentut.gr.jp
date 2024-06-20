@@ -6,11 +6,10 @@ const projects = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
-      author: z.string(),
-      date: z.coerce.date(),
+      pubDate: z.coerce.date(),
       image: z
         .object({
-          url: image(),
+          src: image(),
           alt: z.string(),
         })
         .optional(),
@@ -24,10 +23,10 @@ const posts = defineCollection({
       title: z.string(),
       description: z.string(),
       author: z.string(),
-      date: z.coerce.date(),
+      pubDate: z.coerce.date(),
       image: z
         .object({
-          url: image(),
+          src: image(),
           alt: z.string(),
         })
         .optional(),

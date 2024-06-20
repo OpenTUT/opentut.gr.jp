@@ -2,9 +2,9 @@
 title: 'Node.js + WebSocketでピクトチャットをつくる'
 description: ''
 author: '昨日'
-date: '18 April 2024'
+pubDate: '18 April 2024'
 image:
-  url: ./Slider1.png
+  src: ./Slider1.png
   alt: ''
 ---
 

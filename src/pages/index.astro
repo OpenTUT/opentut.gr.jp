@@ -8,7 +8,7 @@ import Slider4 from '../assets/Slider4.png';
 import Slider5 from '../assets/Slider5.png';
 import { Slider } from '../components/Slider';
 import { Terminal } from '../components/Terminal';
-import Layout from '../layouts/Layout.astro';
+import Base from '../layouts/Base.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from './consts';
 
 const images = [
@@ -20,7 +20,7 @@ const images = [
 ];
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Base title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <div class="min-h-screen bg-gray-100 text-gray-800">
     <div class="container mx-auto px-5 py-10">
       <div id="slider" class="mx-2 mb-5 bg-white shadow-md">
@@ -121,4 +121,4 @@ const images = [
       </main>
     </div>
   </div>
-</Layout>
+</Base>

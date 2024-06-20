@@ -55,7 +55,6 @@ export function Terminal() {
   return (
     <div className="h-[600px] w-full max-w-4xl overflow-auto bg-black p-4 font-mono text-white">
       {responses.map((res, idx) => (
-        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
         <div key={idx} className="mb-1">
           {res}
         </div>

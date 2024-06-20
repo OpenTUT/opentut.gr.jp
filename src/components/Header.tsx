@@ -83,7 +83,6 @@ export function Header() {
         </ul>
       </nav>
       {isOpen && (
-        // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
         <div
           className="fixed inset-0 z-10 bg-black opacity-50"
           onClick={closeMenu}

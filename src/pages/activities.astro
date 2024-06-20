@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Base from '../layouts/Base.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from './consts';
 
 interface ListItem {
@@ -17,7 +17,7 @@ const ScheduleItems: ListItem[] = [
 ];
 ---
 
-<Layout
+<Base
   title={`活動内容・スケジュール | ${SITE_TITLE}`}
   description={SITE_DESCRIPTION}
 >
@@ -53,4 +53,4 @@ const ScheduleItems: ListItem[] = [
       </main>
     </div>
   </div>
-</Layout>
+</Base>
