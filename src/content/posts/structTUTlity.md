@@ -1,5 +1,4 @@
 ---
-layout: ../../../pages/article.astro
 title: "TUTlityの構造解説"
 description: ""
 author: "eyrin"

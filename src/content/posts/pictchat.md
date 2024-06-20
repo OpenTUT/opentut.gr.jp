@@ -1,5 +1,4 @@
 ---
-layout: ../../../pages/article.astro
 title: "Node.js + WebSocketでピクトチャットをつくる"
 description: ""
 author: "昨日"

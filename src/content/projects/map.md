@@ -1,5 +1,4 @@
 ---
-layout: ../../../pages/article.astro
 title: "キャンパスマップの作成"
 description: ""
 author: "org"
