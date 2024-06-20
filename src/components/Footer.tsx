@@ -1,4 +1,4 @@
-import { SITE_TITLE } from '../pages/consts';
+import { SITE_TITLE } from '../consts';
 
 export function Footer() {
   return (

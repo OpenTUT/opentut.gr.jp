@@ -1,6 +1,7 @@
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
 import OpenTUTLogo from '../assets/opentut_logo_large.svg';
+import { SITE_TITLE } from '../consts';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,15 +10,11 @@ export function Header() {
 
   return (
     <header className="relative flex items-center justify-between border-b-4 border-b-tut-red bg-white p-4">
-      <a href="/" className="font-medium hover:text-gray-300">
-        <div className="flex items-center">
-          <img
-            src={OpenTUTLogo.src}
-            alt="OpenTUT Logo"
-            className="logo mr-2 h-16"
-          />
-        </div>
-      </a>
+      <h2>
+        <a href="/">
+          <img src={OpenTUTLogo.src} alt={SITE_TITLE} className="mr-2 h-16" />
+        </a>
+      </h2>
       <div className="z-30 sm:hidden">
         <button type="button" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (

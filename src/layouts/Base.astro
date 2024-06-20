@@ -1,6 +1,7 @@
 ---
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
+import { SITE_TITLE } from '../consts';
 
 interface Props {
   title: string;
@@ -42,7 +43,11 @@ const { title, description } = Astro.props;
       <slot />
     </main>
 
-    <Footer />
+    <footer class="bg-gray-800">
+      <p class="mx-auto max-w-screen-xl p-4 text-white">
+        &copy; 2024 {SITE_TITLE}
+      </p>
+    </footer>
   </body>
 </html>
 

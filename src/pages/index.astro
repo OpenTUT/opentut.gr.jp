@@ -9,7 +9,7 @@ import Slider5 from '../assets/Slider5.png';
 import { Slider } from '../components/Slider';
 import { Terminal } from '../components/Terminal';
 import Base from '../layouts/Base.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from './consts';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 const images = [
   { src: (await getImage({ src: Slider1, width: 1920 })).src, alt: 'image 1' },
@@ -21,13 +21,13 @@ const images = [
 ---
 
 <Base title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <div id="slider" class="mx-2 mb-5 bg-white shadow-md">
+  <div id="slider" class="mb-5 bg-white shadow-md">
     <Slider client:load images={images} />
   </div>
 
   <section
     id="about"
-    class="mx-2 mb-5 border-2 border-t-tut-red bg-white p-4 shadow-md"
+    class="mb-5 border-2 border-t-tut-red bg-white p-4 shadow-md"
   >
     <h2 class="mb-3 text-2xl font-bold">OpenTUTとは</h2>
     <p>
@@ -47,10 +47,12 @@ const images = [
     <p>興味のある方は、ページ上部の𝕏(旧Twitter)へご連絡ください。</p><br />
   </section>
 
-  <div class="flex w-full flex-col items-stretch justify-around sm:flex-row">
+  <div
+    class="mb-5 flex w-full flex-col items-stretch justify-around gap-4 sm:flex-row"
+  >
     <section
       id="activities"
-      class="mx-2 mb-5 min-w-0 flex-1 border-2 border-t-tut-red bg-white p-4 shadow-md"
+      class="min-w-0 flex-1 border-2 border-t-tut-red bg-white p-4 shadow-md"
     >
       <h2 class="mb-3 text-2xl font-bold">活動内容・スケジュール</h2>
       <p>週1回、対面でLT会と勉強会を開催しています。</p><br />
@@ -63,7 +65,7 @@ const images = [
 
     <section
       id="members"
-      class="mx-2 mb-5 min-w-0 flex-1 border-2 border-t-tut-red bg-white p-4 shadow-md"
+      class="min-w-0 flex-1 border-2 border-t-tut-red bg-white p-4 shadow-md"
     >
       <h2 class="mb-3 text-2xl font-bold">部員の活動</h2>
       <p>
@@ -78,7 +80,7 @@ const images = [
 
     <section
       id="privacy"
-      class="mx-2 mb-5 min-w-0 flex-1 border-2 border-t-tut-red bg-white p-4 shadow-md"
+      class="min-w-0 flex-1 border-2 border-t-tut-red bg-white p-4 shadow-md"
     >
       <h2 class="mb-3 text-2xl font-bold">TUTility</h2>
       <p>TUTilityに関する情報、プライバシーポリシー等を掲載しています。</p><br
@@ -91,11 +93,13 @@ const images = [
     </section>
   </div>
 
-  <div class="flex w-full flex-col items-stretch justify-around sm:flex-row">
-    <div class="min-w-0 flex-1 p-4">
+  <div
+    class="flex w-full flex-col items-stretch justify-around gap-4 sm:flex-row"
+  >
+    <div class="min-w-0 flex-1">
       <Terminal client:load />
     </div>
-    <div class="min-w-0 flex-1 p-4">
+    <div class="min-w-0 flex-1">
       <Timeline
         client:load
         dataSource={{
