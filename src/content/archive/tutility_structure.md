@@ -2,7 +2,7 @@
 title: 'TUTlityの構造'
 description: ''
 author: 'eyrin'
-pubDate: '25 April 2024'
+date: '25 April 2024'
 marp: true
 ---
 

@@ -4,15 +4,16 @@ import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 import Card from '../../components/Card.astro';
+import { IconCalendarEvent, IconUser } from '@tabler/icons-react';
 
 const archive = (await getCollection('archive')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
 <Base title={`Archive | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
   <Card>
-    <h1 class="mb-4 text-3xl font-bold">Archive</h1>
+    <h1 class="mb-8 mt-2 text-3xl font-bold">Archive</h1>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
       {
         archive.map((post) => (
@@ -36,6 +37,22 @@ const archive = (await getCollection('archive')).sort(
               >
                 <h2 class="mb-4 text-2xl font-bold">{post.data.title}</h2>
               </a>
+
+              <div class="mb-2 flex gap-1 font-medium text-gray-500">
+                <IconCalendarEvent />
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString('ja', {
+                    year: 'numeric',
+                    month: 'numeric',
+                    day: 'numeric',
+                    weekday: 'short',
+                  })}
+                </time>
+              </div>
+              <div class="flex gap-1 font-medium text-gray-500">
+                <IconUser />
+                {post.data.author}
+              </div>
             </div>
           </archive>
         ))

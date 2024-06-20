@@ -3,25 +3,11 @@ import Base from '../layouts/Base.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import Card from '../components/Card.astro';
 import { SCHEDULE, toDurationString } from '../schedule';
-
-interface ListItem {
-  id: number;
-  text: string;
-  subItems?: ListItem[];
-}
-
-const ScheduleItems: ListItem[] = [
-  { id: 1, text: '5/30(木)16:30-19:30' },
-  { id: 2, text: '6/6(木)16:30-19:30' },
-  { id: 3, text: '6/13(木)16:30-19:30 (グループ研究室2での活動)' },
-  { id: 4, text: '6/20(木)16:30-19:30' },
-  { id: 5, text: '6/27(木)16:30-19:30' },
-];
 ---
 
 <Base title={`About Us | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
   <Card>
-    <h1 class="mb-4 text-3xl font-bold">About Us</h1>
+    <h1 class="mb-8 mt-2 text-3xl font-bold">About Us</h1>
     <div class="prose mb-4 max-w-none">
       <h2>活動内容・スケジュール</h2>
       <p>週1回、対面でLT会と勉強会を開催しています。</p>

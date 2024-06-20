@@ -6,7 +6,7 @@ const projects = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
-      pubDate: z.coerce.date(),
+      date: z.coerce.date(),
       image: z
         .object({
           src: image(),
@@ -23,7 +23,7 @@ const archive = defineCollection({
       title: z.string(),
       description: z.string(),
       author: z.string(),
-      pubDate: z.coerce.date(),
+      date: z.coerce.date(),
       image: z
         .object({
           src: image(),
