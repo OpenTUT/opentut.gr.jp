@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Card from '../components/Card.astro';
 
 interface ListItem {
   id: number;
@@ -21,11 +22,8 @@ const ScheduleItems: ListItem[] = [
   title={`活動内容・スケジュール | ${SITE_TITLE}`}
   description={SITE_DESCRIPTION}
 >
-  <section
-    id="about"
-    class="mb-5 border-2 border-t-tut-red bg-white p-4 shadow-md"
-  >
-    <h2 class="mb-3 text-2xl font-bold">活動内容・スケジュール</h2>
+  <Card>
+    <h1 class="mb-3 text-2xl font-bold">活動内容・スケジュール</h1>
     <p>週1回、対面でLT会と勉強会を開催しています。</p><br />
     <p>
       毎週木曜日の16:30-19:30に、図書館2階の「グループ研究室1」で活動しています(曜日変更あり)。
@@ -45,5 +43,5 @@ const ScheduleItems: ListItem[] = [
         ))
       }
     </ul>
-  </section>
+  </Card>
 </Base>

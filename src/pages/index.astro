@@ -10,6 +10,7 @@ import { Slider } from '../components/Slider';
 import { Terminal } from '../components/Terminal';
 import Base from '../layouts/Base.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Card from '../components/Card.astro';
 
 const images = [
   { src: (await getImage({ src: Slider1, width: 1920 })).src, alt: 'image 1' },
@@ -21,39 +22,34 @@ const images = [
 ---
 
 <Base title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <div id="slider" class="mb-5 bg-white shadow-md">
+  <div id="slider" class="mb-8 bg-white shadow-md">
     <Slider client:load images={images} />
   </div>
 
-  <section
-    id="about"
-    class="mb-5 border-2 border-t-tut-red bg-white p-4 shadow-md"
-  >
-    <h2 class="mb-3 text-2xl font-bold">OpenTUTとは</h2>
-    <p>
-      OpenTUTは、学生の大学生活を快適にするための情報基盤を整える、有志の団体です。
-    </p><br />
-    <p>
-      豊橋技科大生の学生生活を支える時間割アプリの「TUTility」をリリースし、日々改善や機能追加をしています。
-    </p><br />
-    <p>
-      また、プログラミングの経験が浅い方や、チームでの開発をしてみたい方が気軽に参加できる場所を作ることを目的としており、これを実現するためのメンバーを募集中です。
-    </p><br />
-    <p>
-      現在、週1回の対面による活動で、自分の紹介したい技術を発表するLT会と、自分の学びたいことやReactのチュートリアルを行う勉強会を開催しています。
-    </p><br />
-    <p>TUTilityのほかにも、学生生活を支える新規プロジェクトを開発中です。</p><br
-    />
-    <p>興味のある方は、ページ上部の𝕏(旧Twitter)へご連絡ください。</p><br />
-  </section>
+  <div class="mb-8">
+    <Card>
+      <h1 class="mb-3 text-2xl font-bold">OpenTUTとは</h1>
+      <p>
+        OpenTUTは、学生の大学生活を快適にするための情報基盤を整える、有志の団体です。
+      </p><br />
+      <p>
+        豊橋技科大生の学生生活を支える時間割アプリの「TUTility」をリリースし、日々改善や機能追加をしています。
+      </p><br />
+      <p>
+        また、プログラミングの経験が浅い方や、チームでの開発をしてみたい方が気軽に参加できる場所を作ることを目的としており、これを実現するためのメンバーを募集中です。
+      </p><br />
+      <p>
+        現在、週1回の対面による活動で、自分の紹介したい技術を発表するLT会と、自分の学びたいことやReactのチュートリアルを行う勉強会を開催しています。
+      </p><br />
+      <p>
+        TUTilityのほかにも、学生生活を支える新規プロジェクトを開発中です。
+      </p><br />
+      <p>興味のある方は、ページ上部の𝕏(旧Twitter)へご連絡ください。</p><br />
+    </Card>
+  </div>
 
-  <div
-    class="mb-5 flex w-full flex-col items-stretch justify-around gap-4 sm:flex-row"
-  >
-    <section
-      id="activities"
-      class="min-w-0 flex-1 border-2 border-t-tut-red bg-white p-4 shadow-md"
-    >
+  <div class="mb-8 flex flex-col gap-4 sm:flex-row">
+    <Card>
       <h2 class="mb-3 text-2xl font-bold">活動内容・スケジュール</h2>
       <p>週1回、対面でLT会と勉強会を開催しています。</p><br />
       <a href="/activities" class="font-medium hover:text-gray-400"
@@ -61,12 +57,9 @@ const images = [
           <span class="text-red-600">▶</span>詳しく見る
         </p></a
       >
-    </section>
+    </Card>
 
-    <section
-      id="members"
-      class="min-w-0 flex-1 border-2 border-t-tut-red bg-white p-4 shadow-md"
-    >
+    <Card>
       <h2 class="mb-3 text-2xl font-bold">部員の活動</h2>
       <p>
         LT会で発表した技術や、進行中のプロジェクトについて紹介しています。
@@ -76,12 +69,9 @@ const images = [
           <span class="text-red-600">▶</span>詳しく見る
         </p></a
       >
-    </section>
+    </Card>
 
-    <section
-      id="privacy"
-      class="min-w-0 flex-1 border-2 border-t-tut-red bg-white p-4 shadow-md"
-    >
+    <Card>
       <h2 class="mb-3 text-2xl font-bold">TUTility</h2>
       <p>TUTilityに関する情報、プライバシーポリシー等を掲載しています。</p><br
       />
@@ -90,16 +80,16 @@ const images = [
           <span class="text-red-600">▶</span>詳しく見る
         </p></a
       >
-    </section>
+    </Card>
   </div>
 
   <div
     class="flex w-full flex-col items-stretch justify-around gap-4 sm:flex-row"
   >
-    <div class="min-w-0 flex-1">
+    <div class="w-full">
       <Terminal client:load />
     </div>
-    <div class="min-w-0 flex-1">
+    <div class="w-full">
       <Timeline
         client:load
         dataSource={{
