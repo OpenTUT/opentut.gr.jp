@@ -55,6 +55,7 @@ const posts = (await getCollection('posts')).sort(
                       <Image
                         src={post.data.image.url}
                         alt={post.data.image.alt}
+                        width={1920}
                         class="aspect-video rounded-t-lg object-cover"
                       />
                     ) : null}

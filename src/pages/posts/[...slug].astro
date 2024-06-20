@@ -13,7 +13,7 @@ type Props = CollectionEntry<'posts'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
-const { title, date, author } = post.data;
+const { title, date, author, marp } = post.data;
 ---
 
 <Layout title="Article | TUT-IIC">
@@ -29,7 +29,7 @@ const { title, date, author } = post.data;
         <h2 class="mb-4 text-right text-2xl font-semibold text-red-700">
           by {author}
         </h2>
-        <div class="prose max-w-none">
+        <div class:list={['prose', 'max-w-none', { 'prose-hr:hidden': marp }]}>
           <Content />
         </div>
         <p class="mt-8 text-right text-xl text-gray-500">
