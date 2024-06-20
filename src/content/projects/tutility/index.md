@@ -1,7 +1,10 @@
 ---
 title: '時間割アプリ「TUTility」'
 description: '時間割アプリ「TUTility」のプロジェクトページです．'
-date: '2024-06-21'
+date: '2024/06/21'
+image:
+  src: ./tutility.jpg
+  alt: TUTility
 ---
 
 # プライバシーポリシー
