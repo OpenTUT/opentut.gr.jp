@@ -17,25 +17,25 @@ const posts = (await getCollection('posts')).sort(
       <main>
         <section
           id="about"
-          class="p-4 bg-white shadow-md mb-5 mx-2 border-2 border-t-tut-red"
+          class="mx-2 mb-5 border-2 border-t-tut-red bg-white p-4 shadow-md"
         >
-          <h2 class="text-2xl font-bold mb-3">部員の活動</h2>
+          <h2 class="mb-3 text-2xl font-bold">部員の活動</h2>
           <p>部員がLT会で発表した技術について紹介しています。</p><br />
           <p>勉強会や、進行中のプロジェクトについての紹介もしています。</p><br
           /><br />
-          <h3 class="text-xl font-bold mb-3">進行中のプロジェクト</h3>
-          <div class="overflow-y-auto space-x-4">
+          <h3 class="mb-3 text-xl font-bold">進行中のプロジェクト</h3>
+          <div class="space-x-4 overflow-y-auto">
             {
               projects.map((post) => (
-                <article class="w-96 bg-white shadow-lg rounded-lg overflow-hidden border border-gray-300">
+                <article class="w-96 overflow-hidden rounded-lg border border-gray-300 bg-white shadow-lg">
                   <div class="p-6">
-                    <h2 class="text-2xl font-bold mb-2 text-gray-800">
+                    <h2 class="mb-2 text-2xl font-bold text-gray-800">
                       {post.data.title}
                     </h2>
-                    <p class="text-gray-700 mb-4">{post.data.description}</p>
+                    <p class="mb-4 text-gray-700">{post.data.description}</p>
                     <a
                       href={`/projects/${post.slug}`}
-                      class="text-red-700 hover:text-red-800 font-semibold flex justify-end"
+                      class="flex justify-end font-semibold text-red-700 hover:text-red-800"
                     >
                       Read more...
                     </a>
@@ -44,25 +44,25 @@ const posts = (await getCollection('posts')).sort(
               ))
             }
           </div><br />
-          <h3 class="text-xl font-bold mb-3">Archive</h3>
-          <div class="flex overflow-x-auto space-x-2">
+          <h3 class="mb-3 text-xl font-bold">Archive</h3>
+          <div class="flex space-x-2 overflow-x-auto">
             {
               posts.map((post) => (
                 <article>
-                  <div class="flex flex-col max-w-sm w-96 h-full bg-white border border-gray-200 rounded-lg shadow">
+                  <div class="flex h-full w-96 max-w-sm flex-col rounded-lg border border-gray-200 bg-white shadow">
                     <img
                       src={post.data.image?.url}
                       alt={post.data.image?.alt}
                       class="rounded-t-lg"
                     />
-                    <div class="p-5 flex-grow">
-                      <h2 class="text-2xl font-bold mb-2 text-gray-800">
+                    <div class="flex-grow p-5">
+                      <h2 class="mb-2 text-2xl font-bold text-gray-800">
                         {post.data.title}
                       </h2>
                     </div>
                     <a
                       href={`/posts/${post.slug}`}
-                      class="text-red-700 hover:text-red-800 font-semibold mt-auto p-5 flex justify-end"
+                      class="mt-auto flex justify-end p-5 font-semibold text-red-700 hover:text-red-800"
                     >
                       Read more...
                     </a>

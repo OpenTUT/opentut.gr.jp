@@ -8,17 +8,17 @@ export function Header() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="p-4 flex bg-white justify-between items-center relative border-b-4 border-b-tut-red">
+    <header className="relative flex items-center justify-between border-b-4 border-b-tut-red bg-white p-4">
       <a href="/" className="font-medium hover:text-gray-300">
         <div className="flex items-center">
           <img
             src={OpenTUTLogo.src}
             alt="OpenTUT Logo"
-            className="logo h-16 mr-2"
+            className="logo mr-2 h-16"
           />
         </div>
       </a>
-      <div className="sm:hidden z-30">
+      <div className="z-30 sm:hidden">
         <button type="button" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
             <XMarkIcon className="h-8 w-8" />
@@ -29,14 +29,14 @@ export function Header() {
       </div>
       <nav
         className={`${
-          isOpen ? 'transform -translate-y-0' : 'transform -translate-y-full'
-        } absolute top-0 left-0 w-full sm:static sm:w-auto sm:block sm:transform-none transition-transform duration-300 ease-out z-20 bg-white`}
+          isOpen ? '-translate-y-0 transform' : '-translate-y-full transform'
+        } absolute left-0 top-0 z-20 w-full bg-white transition-transform duration-300 ease-out sm:static sm:block sm:w-auto sm:transform-none`}
       >
-        <ul className="flex flex-col sm:flex-row justify-around sm:items-center">
+        <ul className="flex flex-col justify-around sm:flex-row sm:items-center">
           <li>
             <a
               href="/"
-              className="font-medium hover:text-gray-300 block px-4 py-2 mt-6 sm:px-0 sm:mt-0"
+              className="mt-6 block px-4 py-2 font-medium hover:text-gray-300 sm:mt-0 sm:px-0"
               onClick={closeMenu}
             >
               トップページ
@@ -45,7 +45,7 @@ export function Header() {
           <li>
             <a
               href="/activities"
-              className="font-medium hover:text-gray-300 block px-4 py-2 sm:ml-5 sm:px-0"
+              className="block px-4 py-2 font-medium hover:text-gray-300 sm:ml-5 sm:px-0"
               onClick={closeMenu}
             >
               活動内容・スケジュール
@@ -54,7 +54,7 @@ export function Header() {
           <li>
             <a
               href="/members"
-              className="font-medium hover:text-gray-300 block px-4 py-2 sm:ml-5 sm:px-0"
+              className="block px-4 py-2 font-medium hover:text-gray-300 sm:ml-5 sm:px-0"
               onClick={closeMenu}
             >
               部員の活動
@@ -63,7 +63,7 @@ export function Header() {
           <li>
             <a
               href="/tutility"
-              className="font-medium hover:text-gray-300 block px-4 py-2 sm:ml-5 sm:px-0"
+              className="block px-4 py-2 font-medium hover:text-gray-300 sm:ml-5 sm:px-0"
               onClick={closeMenu}
             >
               TUTility
@@ -74,7 +74,7 @@ export function Header() {
               href="https://twitter.com/OpenTUT_info"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium hover:text-gray-300 block px-4 py-2 sm:ml-2 sm:mr-2"
+              className="block px-4 py-2 font-medium hover:text-gray-300 sm:ml-2 sm:mr-2"
               onClick={closeMenu}
             >
               𝕏(旧Twitter)
@@ -85,7 +85,7 @@ export function Header() {
       {isOpen && (
         // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
         <div
-          className="fixed inset-0 bg-black opacity-50 z-10"
+          className="fixed inset-0 z-10 bg-black opacity-50"
           onClick={closeMenu}
         />
       )}

@@ -14,14 +14,7 @@ interface SliderProps {
 export function Slider({ images }: SliderProps) {
   return (
     <Swiper
-      className="
-        [&_.swiper-pagination-bullet-active]:!bg-tut-red
-        [&_.swiper-pagination-bullet]:h-[11px]
-        [&_.swiper-pagination-bullet]:w-[11px]
-        [&_.swiper-pagination-bullet]:bg-gray-200
-        [&_.swiper-button-prev::after]:text-tut-red
-        [&_.swiper-button-next::after]:text-tut-red
-      "
+      className="[&_.swiper-button-next::after]:text-tut-red [&_.swiper-button-prev::after]:text-tut-red [&_.swiper-pagination-bullet-active]:!bg-tut-red [&_.swiper-pagination-bullet]:h-[11px] [&_.swiper-pagination-bullet]:w-[11px] [&_.swiper-pagination-bullet]:bg-gray-200"
       modules={[Autoplay, Navigation, Pagination]}
       navigation
       pagination={{ clickable: true }}
