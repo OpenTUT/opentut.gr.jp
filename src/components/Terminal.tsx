@@ -53,7 +53,7 @@ export function Terminal() {
   };
 
   return (
-    <div className="bg-black text-white font-mono w-full max-w-4xl h-[600px] p-4 overflow-auto">
+    <div className="h-[600px] w-full max-w-4xl overflow-auto bg-black p-4 font-mono text-white">
       {responses.map((res, idx) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
         <div key={idx} className="mb-1">
@@ -61,13 +61,13 @@ export function Terminal() {
         </div>
       ))}
       <div className="flex">
-        <span className="text-tut-red mr-2">{'$'}</span>
+        <span className="mr-2 text-tut-red">{'$'}</span>
         <form onSubmit={handleSubmit} className="w-full">
           <input
             type="text"
             value={input}
             onChange={handleInputChange}
-            className="bg-transparent border-none w-full focus:outline-none text-white"
+            className="w-full border-none bg-transparent text-white focus:outline-none"
             placeholder="Type a command..."
           />
         </form>
