@@ -35,9 +35,13 @@ const { title, description } = Astro.props;
     <meta property="twitter:description" content={description} />
   </head>
 
-  <body>
+  <body class="flex min-h-dvh flex-col break-words bg-gray-100 text-gray-800">
     <Header client:load />
-    <slot />
+
+    <main class="mx-auto w-full max-w-screen-xl flex-1 px-4 py-8">
+      <slot />
+    </main>
+
     <Footer />
   </body>
 </html>

@@ -18,33 +18,28 @@ const { title, pubDate, author, marp, description } = post.data;
 ---
 
 <Base title={`${title} | ${SITE_TITLE}`} description={description}>
-  <div class="min-h-screen bg-gray-100 text-gray-800">
-    <div class="container mx-auto px-5 py-10">
-      <h1>{title}</h1>
-      <div
-        class="mb-4 mt-10 w-full max-w-6xl rounded border-t-8 border-red-700 bg-white px-8 pb-8 pt-6 shadow-md"
-      >
-        <h1 class="mb-4 text-5xl font-bold text-black">
-          {title}
-        </h1>
-        <h2 class="mb-4 text-right text-2xl font-semibold text-red-700">
-          by {author}
-        </h2>
-        <div class:list={['prose', 'max-w-none', { 'prose-hr:hidden': marp }]}>
-          <Content />
-        </div>
-        <p class="mt-8 text-right text-xl text-gray-500">
-          Written on: {
-            pubDate
-              .toLocaleDateString('ja', {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit',
-              })
-              .replaceAll('/', '-')
-          }
-        </p>
-      </div>
-    </div>
+  <div
+    class="mb-4 mt-10 w-full max-w-6xl rounded border-t-8 border-red-700 bg-white px-8 pb-8 pt-6 shadow-md"
+  >
+    <h1 class="mb-4 text-5xl font-bold text-black">
+      {title}
+    </h1>
+    <h2 class="mb-4 text-right text-2xl font-semibold text-red-700">
+      by {author}
+    </h2>
+    <article class:list={['prose', 'max-w-none', { 'prose-hr:hidden': marp }]}>
+      <Content />
+    </article>
+    <p class="mt-8 text-right text-xl text-gray-500">
+      Written on: {
+        pubDate
+          .toLocaleDateString('ja', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          })
+          .replaceAll('/', '-')
+      }
+    </p>
   </div>
 </Base>
