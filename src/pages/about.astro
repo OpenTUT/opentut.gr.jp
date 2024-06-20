@@ -24,7 +24,7 @@ import { SCHEDULE, toDurationString } from '../schedule';
           SCHEDULE.map((item) => (
             <li>
               {toDurationString(item.begin, item.end)}
-              {item.note ? `(${item.note})` : null}
+              {item.note && `(${item.note})`}
             </li>
           ))
         }

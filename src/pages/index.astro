@@ -14,11 +14,11 @@ import Card from '../components/Card.astro';
 import { SCHEDULE, toDurationString } from '../schedule';
 
 const images = [
-  { src: (await getImage({ src: Slider1, width: 1920 })).src, alt: 'image 1' },
-  { src: (await getImage({ src: Slider2, width: 1920 })).src, alt: 'image 2' },
-  { src: (await getImage({ src: Slider3, width: 1920 })).src, alt: 'image 3' },
-  { src: (await getImage({ src: Slider4, width: 1920 })).src, alt: 'image 4' },
-  { src: (await getImage({ src: Slider5, width: 1920 })).src, alt: 'image 5' },
+  { src: (await getImage({ src: Slider1, width: 720 })).src, alt: 'image 1' },
+  { src: (await getImage({ src: Slider2, width: 720 })).src, alt: 'image 2' },
+  { src: (await getImage({ src: Slider3, width: 720 })).src, alt: 'image 3' },
+  { src: (await getImage({ src: Slider4, width: 720 })).src, alt: 'image 4' },
+  { src: (await getImage({ src: Slider5, width: 720 })).src, alt: 'image 5' },
 ];
 ---
 
@@ -86,7 +86,7 @@ const images = [
               SCHEDULE.slice(0, 3).map((item) => (
                 <li>
                   {toDurationString(item.begin, item.end)}
-                  {item.note ? `(${item.note})` : null}
+                  {item.note && `(${item.note})`}
                 </li>
               ))
             }
