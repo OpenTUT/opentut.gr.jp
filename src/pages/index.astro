@@ -11,6 +11,7 @@ import { Terminal } from '../components/Terminal';
 import Base from '../layouts/Base.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import Card from '../components/Card.astro';
+import { SCHEDULE, toDurationString } from '../schedule';
 
 const images = [
   { src: (await getImage({ src: Slider1, width: 1920 })).src, alt: 'image 1' },
@@ -22,74 +23,80 @@ const images = [
 ---
 
 <Base title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <div id="slider" class="mb-8 bg-white shadow-md">
+  <div class="grid grid-cols-1 gap-12">
     <Slider client:load images={images} />
-  </div>
 
-  <div class="mb-8">
     <Card>
-      <h1 class="mb-3 text-2xl font-bold">OpenTUTとは</h1>
-      <p>
-        OpenTUTは、学生の大学生活を快適にするための情報基盤を整える、有志の団体です。
-      </p><br />
-      <p>
-        豊橋技科大生の学生生活を支える時間割アプリの「TUTility」をリリースし、日々改善や機能追加をしています。
-      </p><br />
-      <p>
-        また、プログラミングの経験が浅い方や、チームでの開発をしてみたい方が気軽に参加できる場所を作ることを目的としており、これを実現するためのメンバーを募集中です。
-      </p><br />
-      <p>
-        現在、週1回の対面による活動で、自分の紹介したい技術を発表するLT会と、自分の学びたいことやReactのチュートリアルを行う勉強会を開催しています。
-      </p><br />
-      <p>
-        TUTilityのほかにも、学生生活を支える新規プロジェクトを開発中です。
-      </p><br />
-      <p>興味のある方は、ページ上部の𝕏(旧Twitter)へご連絡ください。</p><br />
-    </Card>
-  </div>
+      <h1 class="mb-4 text-3xl font-bold">About Us</h1>
+      <div class="prose mb-4 max-w-none">
+        <p>
+          OpenTUTは、学生の大学生活を快適にするための情報基盤を整える、有志の団体です。
+          豊橋技科大生の学生生活を支える時間割アプリの「TUTility」をリリースし、日々改善や機能追加をしています。
+          また、プログラミングの経験が浅い方や、チームでの開発をしてみたい方が気軽に参加できる場所を作ることを目的としており、これを実現するためのメンバーを募集中です。
+        </p>
+        <p>
+          現在、週1回の対面による活動で、自分の紹介したい技術を発表するLT会と、自分の学びたいことやReactのチュートリアルを行う勉強会を開催しています。
+          TUTilityのほかにも、学生生活を支える新規プロジェクトを開発中です。興味のある方は、ページ上部の𝕏(旧Twitter)へご連絡ください。
+        </p>
+      </div>
 
-  <div class="mb-8 flex flex-col gap-4 sm:flex-row">
-    <Card>
-      <h2 class="mb-3 text-2xl font-bold">活動内容・スケジュール</h2>
-      <p>週1回、対面でLT会と勉強会を開催しています。</p><br />
-      <a href="/activities" class="font-medium hover:text-gray-400"
-        ><p class="text-right text-lg font-bold">
-          <span class="text-red-600">▶</span>詳しく見る
-        </p></a
+      <a
+        href="/about"
+        class="rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:text-tut-red"
       >
+        <span class="text-red-600">▶</span> もっと詳しく
+      </a>
     </Card>
 
-    <Card>
-      <h2 class="mb-3 text-2xl font-bold">部員の活動</h2>
-      <p>
-        LT会で発表した技術や、進行中のプロジェクトについて紹介しています。
-      </p><br />
-      <a href="/members" class="font-medium hover:text-gray-400"
-        ><p class="text-right text-lg font-bold">
-          <span class="text-red-600">▶</span>詳しく見る
-        </p></a
-      >
-    </Card>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <Card>
+        <h2 class="mb-4 text-2xl font-bold">Projects</h2>
+        <div class="prose mb-4 max-w-none flex-1">
+          <p>現在進行中のプロジェクトについて紹介しています。</p>
+        </div>
+        <a
+          href="/projects"
+          class="rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:text-tut-red"
+        >
+          <span class="text-red-600">▶</span> プロジェクト紹介へ
+        </a>
+      </Card>
 
-    <Card>
-      <h2 class="mb-3 text-2xl font-bold">TUTility</h2>
-      <p>TUTilityに関する情報、プライバシーポリシー等を掲載しています。</p><br
-      />
-      <a href="/tutility" class="font-medium hover:text-gray-400"
-        ><p class="text-right text-lg font-bold">
-          <span class="text-red-600">▶</span>詳しく見る
-        </p></a
-      >
-    </Card>
-  </div>
+      <Card>
+        <h2 class="mb-4 text-2xl font-bold">Archive</h2>
+        <div class="prose mb-4 max-w-none flex-1">
+          <p>LT会で発表した内容やブログ記事を掲載しています。</p>
+        </div>
+        <a
+          href="/archive"
+          class="rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:text-tut-red"
+        >
+          <span class="text-red-600">▶</span> 記事一覧へ
+        </a>
+      </Card>
 
-  <div
-    class="flex w-full flex-col items-stretch justify-around gap-4 sm:flex-row"
-  >
-    <div class="w-full">
-      <Terminal client:load />
+      <Card>
+        <h2 class="mb-4 text-2xl font-bold">Schedule</h2>
+        <div class="prose mb-4 max-w-none">
+          <p>
+            特に記載のない限りは図書館2階の「グループ研究室1」で活動しています。
+          </p>
+          <ul>
+            {
+              SCHEDULE.slice(0, 3).map((item) => (
+                <li>
+                  {toDurationString(item.begin, item.end)}
+                  {item.note ? `(${item.note})` : null}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </Card>
     </div>
-    <div class="w-full">
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <Terminal client:load />
       <Timeline
         client:load
         dataSource={{

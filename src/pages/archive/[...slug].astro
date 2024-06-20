@@ -5,17 +5,17 @@ import { SITE_TITLE } from '../../consts';
 import Card from '../../components/Card.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('projects');
+  const posts = await getCollection('archive');
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: post,
   }));
 }
-type Props = CollectionEntry<'projects'>;
+type Props = CollectionEntry<'archive'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
-const { title, pubDate, description } = post.data;
+const { title, pubDate, author, marp, description } = post.data;
 ---
 
 <Base title={`${title} | ${SITE_TITLE}`} description={description}>
@@ -24,7 +24,12 @@ const { title, pubDate, description } = post.data;
       <h1 class="mb-4 text-3xl font-bold">
         {title}
       </h1>
-      <article class="prose max-w-none">
+      <h2 class="mb-4 text-right text-2xl font-semibold text-red-700">
+        by {author}
+      </h2>
+      <article
+        class:list={['prose', 'max-w-none', { 'prose-hr:hidden': marp }]}
+      >
         <Content />
       </article>
       <p class="mt-8 text-right text-xl text-gray-500">

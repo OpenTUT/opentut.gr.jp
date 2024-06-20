@@ -6,19 +6,21 @@ import Card from '../components/Card.astro';
 
 <Base title={`TUTility | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
   <Card>
-    <h1 class="mb-3 text-2xl font-bold">TUTility</h1>
-    <h2 class="mb-3 text-xl font-bold">プライバシーポリシー</h2>
-    <h3 class="mb-3 text-lg font-bold">アプリが収集する情報</h3>
-    <p>
-      このアプリが収集する情報はApple社のApp Store Connect
-      (iOS)またはGoogle社のGoogle Play Console
-      (Android)によるもののみであり、それ以外の情報は一切収集いたしません。ただし、アプリ内のブラウザでアクセスしたWebサイトによって収集されたデータに関しましては、私の関知するところではございません。
-    </p><br /><br />
+    <h1 class="mb-4 text-3xl font-bold">TUTility</h1>
+    <div class="prose max-w-none">
+      <h2>プライバシーポリシー</h2>
+      <h3>アプリが収集する情報</h3>
+      <p>
+        このアプリが収集する情報はApple社のApp Store Connect
+        (iOS)またはGoogle社のGoogle Play Console
+        (Android)によるもののみであり、それ以外の情報は一切収集いたしません。ただし、アプリ内のブラウザでアクセスしたWebサイトによって収集されたデータに関しましては、私の関知するところではございません。
+      </p>
 
-    <h3 class="mb-3 text-lg font-bold">問い合わせ</h3>
-    <p>
-      このアプリに関するお問い合わせは、 rin[アットマーク]eyrin.jp
-      までお願いいたします。
-    </p>
+      <h3>問い合わせ</h3>
+      <p>
+        このアプリに関するお問い合わせは、 rin[アットマーク]eyrin.jp
+        までお願いいたします。
+      </p>
+    </div>
   </Card>
 </Base>

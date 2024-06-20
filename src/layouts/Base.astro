@@ -1,5 +1,5 @@
 ---
-import { Header } from '../components/Header';
+import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
 
 interface Props {
@@ -36,7 +36,7 @@ const { title, description } = Astro.props;
   </head>
 
   <body class="flex min-h-dvh flex-col break-words bg-gray-100 text-gray-800">
-    <Header client:load />
+    <Header />
 
     <main class="mx-auto w-full max-w-screen-xl flex-1 px-4 py-12">
       <slot />
