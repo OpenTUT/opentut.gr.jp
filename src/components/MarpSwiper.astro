@@ -24,11 +24,11 @@ const { html, css } = marp.render(Astro.props.markdown, {
     }
   </div>
   <div
-    class="swiper-pagination [&>.swiper-pagination-bullet-active]:bg-tut-red"
+    class="swiper-pagination [&>.swiper-pagination-bullet-active]:!bg-tut-red"
   >
   </div>
-  <div class="swiper-button-prev text-tut-red"></div>
-  <div class="swiper-button-next text-tut-red"></div>
+  <div class="swiper-button-prev !text-tut-red"></div>
+  <div class="swiper-button-next !text-tut-red"></div>
 </div>
 
 <script>
