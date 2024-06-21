@@ -1,6 +1,5 @@
 import type React from 'react';
 import { useState } from 'react';
-
 import { SakuraFall } from './SakuraFall';
 
 export function Terminal() {

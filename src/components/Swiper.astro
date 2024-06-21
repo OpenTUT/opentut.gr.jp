@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import Slider1 from '../assets/Slider1.png';
+import Slider2 from '../assets/Slider2.png';
+import Slider3 from '../assets/Slider3.png';
+import Slider4 from '../assets/Slider4.png';
+import Slider5 from '../assets/Slider5.png';
+---
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <Image src={Slider1} alt="Slider1" width="720" class="swiper-slide" />
+    <Image src={Slider2} alt="Slider2" width="720" class="swiper-slide" />
+    <Image src={Slider3} alt="Slider3" width="720" class="swiper-slide" />
+    <Image src={Slider4} alt="Slider4" width="720" class="swiper-slide" />
+    <Image src={Slider5} alt="Slider5" width="720" class="swiper-slide" />
+  </div>
+  <div
+    class="swiper-pagination [&>.swiper-pagination-bullet-active]:bg-tut-red"
+  >
+  </div>
+  <div class="swiper-button-prev after:text-tut-red"></div>
+  <div class="swiper-button-next after:text-tut-red"></div>
+</div>
+
+<script>
+  import Swiper from 'swiper';
+  import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+
+  new Swiper('.swiper', {
+    autoplay: {
+      delay: 5000,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+      },
+    },
+    cssMode: true,
+    loop: true,
+    modules: [Autoplay, Navigation, Pagination],
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+    spaceBetween: 4,
+  });
+</script>
