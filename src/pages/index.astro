@@ -10,7 +10,6 @@ import { Slider } from '../components/Slider';
 import { Terminal } from '../components/Terminal';
 import Base from '../layouts/Base.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-import Card from '../components/Card.astro';
 import { SCHEDULE, toDurationString } from '../schedule';
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
 
@@ -27,7 +26,7 @@ const images = [
   <Slider client:load images={images} />
 
   <div class="mx-auto max-w-screen-lg px-4 py-8">
-    <div class="mb-8">
+    <section class="mb-8">
       <h1 class="mb-8 text-4xl font-bold">About Us</h1>
       <div class="prose mb-8 max-w-none">
         <p>
@@ -42,44 +41,44 @@ const images = [
       </div>
       <a
         href="/about"
-        class="flex items-center justify-center gap-1 rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:bg-gray-100 hover:text-tut-red"
+        class="flex items-center justify-center gap-1 rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:text-tut-red"
       >
         <span class="text-tut-red"><IconPlayerPlayFilled /></span>
         <div><span class="align-middle">もっと詳しく</span></div>
       </a>
-    </div>
+    </section>
 
     <div class="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
-      <Card>
-        <h2 class="mb-4 mt-2 text-2xl font-bold">Projects</h2>
+      <section class="flex flex-col rounded-2xl bg-white p-4 shadow-md">
+        <h2 class="mb-4 text-2xl font-bold">Projects</h2>
         <div class="prose mb-8 max-w-none flex-1">
           <p>現在進行中のプロジェクトについて紹介しています。</p>
         </div>
         <a
           href="/projects"
-          class="flex items-center justify-center gap-1 rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:bg-gray-100 hover:text-tut-red"
+          class="flex items-center justify-center gap-1 rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:text-tut-red"
         >
           <span class="text-tut-red"><IconPlayerPlayFilled /></span>
           <div><span class="align-middle">プロジェクト紹介へ</span></div>
         </a>
-      </Card>
+      </section>
 
-      <Card>
-        <h2 class="mb-4 mt-2 text-2xl font-bold">Archive</h2>
+      <section class="flex flex-col rounded-2xl bg-white p-4 shadow-md">
+        <h2 class="mb-4 text-2xl font-bold">Archive</h2>
         <div class="prose mb-8 max-w-none flex-1">
           <p>LT会で発表した内容やブログ記事を掲載しています。</p>
         </div>
         <a
           href="/archive"
-          class="flex items-center justify-center gap-1 rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:bg-gray-100 hover:text-tut-red"
+          class="flex items-center justify-center gap-1 rounded-xl border-2 border-tut-red p-4 text-center text-lg font-bold transition-colors hover:text-tut-red"
         >
           <span class="text-tut-red"><IconPlayerPlayFilled /></span>
           <div><span class="align-middle">記事一覧へ</span></div>
         </a>
-      </Card>
+      </section>
 
-      <Card>
-        <h2 class="mb-4 mt-2 text-2xl font-bold">Schedule</h2>
+      <section class="flex flex-col rounded-2xl bg-white p-4 shadow-md">
+        <h2 class="mb-4 text-2xl font-bold">Schedule</h2>
         <div class="prose max-w-none">
           <p>
             特に記載のない限りは図書館2階の「グループ研究室1」で活動しています。
@@ -95,7 +94,7 @@ const images = [
             }
           </ul>
         </div>
-      </Card>
+      </section>
     </div>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">

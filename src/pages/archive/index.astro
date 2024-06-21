@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
-import Card from '../../components/Card.astro';
 import { IconCalendarEvent, IconUser } from '@tabler/icons-react';
 
 const archive = (await getCollection('archive')).sort(
