@@ -1,12 +1,9 @@
 ---
 marp: true
-title: ""
+title: "今後のLT会の資料について"
 description: ""
 author: "hori"
-date: "20 June 2024"
-image:
-  url: https://astro.build/assets/press/astro-logo-dark.svg
-  alt: ''
+date: "2024/06/20"
 ---
 # 今後のLT会の資料について
 ---

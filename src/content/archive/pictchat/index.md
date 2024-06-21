@@ -7,8 +7,3 @@ image:
   src: ./Slider1.png
   alt: ''
 ---
-
-# Hello World!
-
-- test
-  This is a sample sentence.
