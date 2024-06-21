@@ -1,44 +1,6 @@
----
-import { Image } from 'astro:assets';
-import Slider1 from '../assets/Slider1.png';
-import Slider2 from '../assets/Slider2.png';
-import Slider3 from '../assets/Slider3.png';
-import Slider4 from '../assets/Slider4.png';
-import Slider5 from '../assets/Slider5.png';
----
-
 <div class="swiper">
   <div class="swiper-wrapper max-h-[45svh]">
-    <Image
-      src={Slider1}
-      alt="Slider1"
-      width="720"
-      class="swiper-slide object-cover"
-    />
-    <Image
-      src={Slider2}
-      alt="Slider2"
-      width="720"
-      class="swiper-slide object-cover"
-    />
-    <Image
-      src={Slider3}
-      alt="Slider3"
-      width="720"
-      class="swiper-slide object-cover"
-    />
-    <Image
-      src={Slider4}
-      alt="Slider4"
-      width="720"
-      class="swiper-slide object-cover"
-    />
-    <Image
-      src={Slider5}
-      alt="Slider5"
-      width="720"
-      class="swiper-slide object-cover"
-    />
+    <slot />
   </div>
   <div
     class="swiper-pagination [&>.swiper-pagination-bullet-active]:bg-tut-red"
