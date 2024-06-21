@@ -19,7 +19,10 @@ const { html, css } = marp.render(Astro.props.markdown, {
   <div class="swiper-wrapper">
     {
       html.map((slide) => (
-        <marp-svg class="swiper-slide" data-html={slide} data-css={css} />
+        <div
+          class="swiper-slide marpit [&_ol]:list-decimal [&_ul]:list-disc"
+          set:html={slide}
+        />
       ))
     }
   </div>
@@ -31,6 +34,8 @@ const { html, css } = marp.render(Astro.props.markdown, {
   <div class="swiper-button-next !text-tut-red"></div>
 </div>
 
+<style set:html={css}></style>
+
 <script>
   import Swiper from 'swiper';
   import { Keyboard, Navigation, Pagination } from 'swiper/modules';
@@ -39,16 +44,18 @@ const { html, css } = marp.render(Astro.props.markdown, {
     constructor() {
       super();
 
-      const shadow = this.attachShadow({ mode: 'closed' });
-      const style = document.createElement('style');
-      style.textContent = this.dataset.css!;
+      //const shadow = this.attachShadow({ mode: 'closed' });
+      //const style = document.createElement('style');
+      //style.textContent = this.dataset.css!;
 
-      const wrapper = document.createElement('div');
-      wrapper.classList.add('marpit');
-      wrapper.innerHTML = this.dataset.html!;
+      this.innerHTML = `
+<style>${this.dataset.css}</style>
+        <div class="marpit">${this.dataset.html}</div>
+      `;
+      //wrapper.children[0].style.width = '988px';
 
-      shadow.appendChild(style);
-      shadow.appendChild(wrapper);
+      //shadow.appendChild(style);
+      //shadow.appendChild(wrapper);
     }
   }
 
