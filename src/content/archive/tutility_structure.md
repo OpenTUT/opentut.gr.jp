@@ -1,8 +1,8 @@
 ---
-title: 'TUTlityの構造'
+title: TUTlityの構造
 description: ''
-author: 'りｎ'
-date: '2024/04/25'
+author: りｎ
+date: 2024/04/25
 marp: true
 ---
 
