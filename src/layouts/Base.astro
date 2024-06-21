@@ -2,7 +2,7 @@
 import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
 
-interface Props {
+export interface Props {
   title: string;
   description: string;
   image?: string;
@@ -10,7 +10,6 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, image } = Astro.props;
-console.log(image);
 ---
 
 <!doctype html>
@@ -46,12 +45,12 @@ console.log(image);
   <body class="flex min-h-dvh flex-col break-words bg-gray-100 text-gray-800">
     <Header />
 
-    <main class="mx-auto w-full max-w-screen-xl flex-1 px-2 py-12 md:px-4">
+    <main class="flex-1">
       <slot />
     </main>
 
     <footer class="bg-gray-800">
-      <p class="mx-auto max-w-screen-xl px-4 py-8 text-white">
+      <p class="mx-auto max-w-screen-lg px-4 py-8 text-gray-400">
         &copy; 2024 {SITE_TITLE}
       </p>
     </footer>

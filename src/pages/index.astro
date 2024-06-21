@@ -24,11 +24,11 @@ const images = [
 ---
 
 <Base title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <div class="grid grid-cols-1 gap-12">
-    <Slider client:load images={images} />
+  <Slider client:load images={images} />
 
-    <Card>
-      <h1 class="mb-8 mt-2 text-3xl font-bold">About Us</h1>
+  <div class="mx-auto max-w-screen-lg px-4 py-8">
+    <div class="mb-8">
+      <h1 class="mb-8 text-4xl font-bold">About Us</h1>
       <div class="prose mb-8 max-w-none">
         <p>
           OpenTUTは、学生の大学生活を快適にするための情報基盤を整える、有志の団体です。
@@ -47,9 +47,9 @@ const images = [
         <span class="text-tut-red"><IconPlayerPlayFilled /></span>
         <div><span class="align-middle">もっと詳しく</span></div>
       </a>
-    </Card>
+    </div>
 
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+    <div class="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
       <Card>
         <h2 class="mb-4 mt-2 text-2xl font-bold">Projects</h2>
         <div class="prose mb-8 max-w-none flex-1">

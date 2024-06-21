@@ -18,26 +18,17 @@ export function Slider({ images }: SliderProps) {
       modules={[Autoplay, Navigation, Pagination]}
       navigation
       pagination={{ clickable: true }}
-      slidesPerView={3}
+      slidesPerView={1}
       spaceBetween={5}
       autoplay={{
-        delay: 2500,
+        delay: 5000,
         pauseOnMouseEnter: true,
         disableOnInteraction: false,
       }}
       speed={800}
       loop={true}
       breakpoints={{
-        // 320px以上
-        320: {
-          slidesPerView: 1,
-        },
-        // 480px以上
-        480: {
-          slidesPerView: 1,
-        },
-        // 640px以上
-        640: {
+        768: {
           slidesPerView: 3,
         },
       }}

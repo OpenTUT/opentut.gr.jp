@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
-import Card from '../../components/Card.astro';
 import { IconCalendarEvent } from '@tabler/icons-react';
 
 const projects = (await getCollection('projects')).sort(
@@ -12,12 +11,13 @@ const projects = (await getCollection('projects')).sort(
 ---
 
 <Base title={`Projects | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
-  <Card>
-    <h1 class="mb-8 mt-2 text-3xl font-bold">Projects</h1>
+  <div class="mx-auto max-w-screen-lg px-4 py-8">
+    <h1 class="mb-8 text-4xl font-bold">Projects</h1>
+
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
       {
         projects.map((post) => (
-          <archive class="flex flex-col overflow-hidden rounded-xl border-2 border-gray-200">
+          <archive class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md">
             {post.data.image ? (
               <Image
                 src={post.data.image.src}
@@ -54,5 +54,5 @@ const projects = (await getCollection('projects')).sort(
         ))
       }
     </div>
-  </Card>
+  </div>
 </Base>

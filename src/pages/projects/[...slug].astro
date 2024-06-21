@@ -1,9 +1,8 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import Base from '../../layouts/Base.astro';
 import { SITE_TITLE } from '../../consts';
-import Card from '../../components/Card.astro';
 import { IconCalendarEvent } from '@tabler/icons-react';
+import Article from '../../layouts/Article.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('projects');
@@ -19,16 +18,16 @@ const { Content } = await post.render();
 const { title, date, description, image } = post.data;
 ---
 
-<Base
+<Article
   title={`${title} | ${SITE_TITLE}`}
   description={description}
   image={image?.src.src}
 >
-  <Card>
-    <h1 class="mb-8 mt-2 text-3xl font-bold">
+  <header slot="header">
+    <h1 class="mb-8 text-3xl font-bold">
       {title}
     </h1>
-    <div class="mb-8 flex gap-1 text-gray-500">
+    <div class="flex gap-1 text-gray-500">
       <IconCalendarEvent />
       <time datetime={date.toISOString()}>
         {
@@ -41,9 +40,9 @@ const { title, date, description, image } = post.data;
         }
       </time>
     </div>
-    <hr />
-    <article class="prose max-w-none py-8">
-      <Content />
-    </article>
-  </Card>
-</Base>
+  </header>
+
+  <section class="prose max-w-none">
+    <Content />
+  </section>
+</Article>

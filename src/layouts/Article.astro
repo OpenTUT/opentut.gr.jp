@@ -1,0 +1,16 @@
+---
+import Base, { type Props } from './Base.astro';
+
+const { title, description, image } = Astro.props;
+---
+
+<Base title={title} description={description} image={image}>
+  <article class="mx-auto max-w-screen-lg px-4 py-8">
+    <div class="mb-8">
+      <slot name="header" />
+    </div>
+    <div class="-mx-4 rounded-2xl bg-white px-4 py-8 shadow-md">
+      <slot />
+    </div>
+  </article>
+</Base>
