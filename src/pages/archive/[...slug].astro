@@ -47,9 +47,13 @@ const { title, date, author, marp, description, image } = post.data;
     </div>
   </header>
 
-  <div class="-mt-4 mb-8 overflow-hidden rounded-xl border-2 border-gray-200">
-    <MarpSwiper markdown={post.body} />
-  </div>
+  {
+    marp && (
+      <div class="-mt-4 mb-8 overflow-hidden rounded-xl border-2 border-gray-200">
+        <MarpSwiper markdown={post.body} />
+      </div>
+    )
+  }
 
   <section class:list={['prose max-w-none', { 'prose-hr:hidden': marp }]}>
     <Content />
