@@ -6,6 +6,30 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { SCHEDULE, toDurationString } from '../schedule';
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
 import Swiper from '../components/Swiper.astro';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+
+/*{
+    autoplay: {
+      delay: 5000,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+      },
+    },
+    loop: true,
+    modules: [Autoplay, Navigation, Pagination],
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    spaceBetween: 4,
+    speed: 800,
+  } */
 ---
 
 <Base title={SITE_TITLE} description={SITE_DESCRIPTION}>

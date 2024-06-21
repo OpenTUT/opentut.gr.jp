@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import { SITE_TITLE } from '../../consts';
 import { IconCalendarEvent, IconUser } from '@tabler/icons-react';
 import Article from '../../layouts/Article.astro';
+import MarpSwiper from '../../components/MarpSwiper.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('archive');
@@ -45,6 +46,10 @@ const { title, date, author, marp, description, image } = post.data;
       {author}
     </div>
   </header>
+
+  <div class="mb-16 overflow-hidden rounded-xl border-2 border-gray-200">
+    <MarpSwiper markdown={post.body} />
+  </div>
 
   <section class:list={['prose max-w-none', { 'prose-hr:hidden': marp }]}>
     <Content />
