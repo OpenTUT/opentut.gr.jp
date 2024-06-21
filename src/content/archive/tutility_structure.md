@@ -1,7 +1,7 @@
 ---
 title: 'TUTlityの構造'
 description: ''
-author: 'eyrin'
+author: 'りｎ'
 date: '2024/04/25'
 marp: true
 ---
