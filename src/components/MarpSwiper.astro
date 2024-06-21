@@ -1,6 +1,10 @@
 ---
 import { Marp } from '@marp-team/marp-core';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 interface Props {
   markdown: string;
 }
@@ -13,7 +17,11 @@ const { html, css } = marp.render(Astro.props.markdown, {
 
 <div class="swiper">
   <div class="swiper-wrapper">
-    {html.map((slide) => <div class="swiper-slide marpit" set:html={slide} />)}
+    {
+      html.map((slide) => (
+        <marp-svg class="swiper-slide" data-html={slide} data-css={css} />
+      ))
+    }
   </div>
   <div
     class="swiper-pagination [&>.swiper-pagination-bullet-active]:bg-tut-red"
@@ -23,15 +31,28 @@ const { html, css } = marp.render(Astro.props.markdown, {
   <div class="swiper-button-next text-tut-red"></div>
 </div>
 
-<style set:html={css}></style>
-
 <script>
   import Swiper from 'swiper';
   import { Keyboard, Navigation, Pagination } from 'swiper/modules';
 
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
+  class MarpSvg extends HTMLElement {
+    constructor() {
+      super();
+
+      const shadow = this.attachShadow({ mode: 'closed' });
+      const style = document.createElement('style');
+      style.textContent = this.dataset.css!;
+
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('marpit');
+      wrapper.innerHTML = this.dataset.html!;
+
+      shadow.appendChild(style);
+      shadow.appendChild(wrapper);
+    }
+  }
+
+  customElements.define('marp-svg', MarpSvg);
 
   new Swiper('.swiper', {
     keyboard: {
