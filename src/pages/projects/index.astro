@@ -17,7 +17,7 @@ const projects = (await getCollection('projects')).sort(
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
       {
         projects.map((post) => (
-          <archive class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md">
+          <archive class="flex flex-col overflow-hidden border-t-2 border-t-tut-red bg-white shadow-md">
             {post.data.image ? (
               <Image
                 src={post.data.image.src}
