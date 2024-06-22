@@ -108,7 +108,10 @@ import Slider5 from '../assets/Slider5.png';
           </p>
           <ul>
             {
-              SCHEDULE.slice(0, 3).map((item) => (
+              SCHEDULE.slice(
+                Math.max(0, SCHEDULE.length - 3),
+                SCHEDULE.length,
+              ).map((item) => (
                 <li>
                   {toDurationString(item.begin, item.end)}
                   {item.note && `(${item.note})`}
