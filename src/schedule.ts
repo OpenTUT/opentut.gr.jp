@@ -6,26 +6,26 @@ interface ScheduleItem {
 
 export const SCHEDULE: ScheduleItem[] = [
   {
-    begin: new Date('2024-05-30T16:30:00'),
-    end: new Date('2024-05-30T19:30:00'),
+    begin: new Date('2024-07-04T16:30:00'),
+    end: new Date('2024-07-04T19:30:00'),
   },
   {
-    begin: new Date('2024-06-06T16:30:00'),
-    end: new Date('2024-06-06T19:30:00'),
+    begin: new Date('2024-07-11T16:30:00'),
+    end: new Date('2024-07-11T19:30:00'),
   },
   {
-    begin: new Date('2024-06-13T16:30:00'),
-    end: new Date('2024-06-13T19:30:00'),
-    note: 'グループ研究室2で活動',
+    begin: new Date('2024-07-18T16:30:00'),
+    end: new Date('2024-07-18T19:30:00'),
   },
   {
-    begin: new Date('2024-06-20T16:30:00'),
-    end: new Date('2024-06-20T19:30:00'),
+    begin: new Date('2024-07-25T16:30:00'),
+    end: new Date('2024-07-25T19:30:00'),
   },
-  {
-    begin: new Date('2024-06-27T16:30:00'),
-    end: new Date('2024-06-27T19:30:00'),
-  },
+  // {
+  //   begin: new Date('2024-06-13T16:30:00'),
+  //   end: new Date('2024-06-13T19:30:00'),
+  //   note: 'グループ研究室2で活動',
+  // },
 ];
 
 export function toDurationString(begin: Date, end: Date): string {
