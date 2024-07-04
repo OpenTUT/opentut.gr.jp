@@ -34,4 +34,20 @@ const archive = defineCollection({
     }),
 });
 
-export const collections = { projects, archive };
+const introductions = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      date: z.coerce.date(),
+      image: z
+        .object({
+          src: image(),
+          alt: z.string(),
+        })
+        .optional(),
+    }),
+});
+
+export const collections = { projects, archive, introductions };
