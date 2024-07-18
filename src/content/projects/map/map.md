@@ -4,6 +4,8 @@ description: ''
 author: org
 date: 2024/07/18
 marp: true
+image:
+  src: ./map.png
 ---
 # プロジェクト概要
 - [大学が公式で出しているキャンパスマップ](https://www.tut.ac.jp/about/overview/docs/campusguidemap_2023.pdf)のレスポンシブなWebAppを作る（非公式）
