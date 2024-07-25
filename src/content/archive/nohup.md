@@ -34,7 +34,7 @@ terminalで時間がかかる処理をしているとき，チラチラ画面を
 - `~/hoge.sh`に`myfunc`関数として定義する
     - slack apiの処理とnohupの処理を同時にできるように書くだけ
         - 使う前に`source ~/hoge.sh`をする
-        - `myfunc "hoge.py"`とかでbg処理の開始と終了を通知
+        - `myfunc "python3 hoge.py"`とかでbg処理の開始と終了を通知
 
 ## デモンストレーション
 見せます
