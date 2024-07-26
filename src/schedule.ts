@@ -21,6 +21,10 @@ export const SCHEDULE: ScheduleItem[] = [
     begin: new Date('2024-07-25T16:30:00'),
     end: new Date('2024-07-25T19:30:00'),
   },
+  {
+    begin: new Date('2024-08-01T16:30:00'),
+    end: new Date('2024-08-01T19:30:00'),
+  },
   // {
   //   begin: new Date('2024-06-13T16:30:00'),
   //   end: new Date('2024-06-13T19:30:00'),
