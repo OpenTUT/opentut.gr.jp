@@ -71,7 +71,7 @@ import Slider5 from '../assets/Slider5.png';
       </a>
     </section>
 
-    <div class="mb-8 grid grid-cols-1 gap-4 md:grid-cols-4">
+    <div class="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
       <section class="flex flex-col rounded-2xl bg-white p-4 shadow-md">
         <h2 class="mb-4 text-2xl font-bold">Projects</h2>
         <div class="prose mb-8 max-w-none flex-1">
@@ -113,41 +113,14 @@ import Slider5 from '../assets/Slider5.png';
           <div><span class="align-middle">部員一覧へ</span></div>
         </a>
       </section>
-
-      <section class="flex flex-col rounded-2xl bg-white p-4 shadow-md">
-        <h2 class="mb-4 text-2xl font-bold">Schedule</h2>
-        <div class="prose max-w-none">
-          <p>
-            特に記載のない限りは図書館2階の「グループ研究室1」で活動しています。
-          </p>
-          <ul>
-            {
-              SCHEDULE.slice(
-                Math.max(0, SCHEDULE.length - 3),
-                SCHEDULE.length,
-              ).map((item) => (
-                <li>
-                  {toDurationString(item.begin, item.end)}
-                  {item.note && `(${item.note})`}
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </section>
     </div>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-      <Timeline
-        client:load
-        dataSource={{
-          sourceType: 'profile',
-          screenName: 'OpenTUT_info',
-        }}
-        options={{
-          height: '600',
-        }}
-      />
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=22c65092319707859e18f2b20cc2f841cb29d8fb8f759dcd64c1ef907a7cd123%40group.calendar.google.com&ctz=Asia%2FTokyo"
+        style="border: 0"
+        width="100%"
+        height="500"></iframe>
       <Terminal client:load />
     </div>
   </div>
