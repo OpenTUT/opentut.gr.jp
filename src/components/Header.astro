@@ -18,7 +18,9 @@ import HeaderLink from './HeaderLink.astro';
       <img src={OpenTUTLogo.src} alt={SITE_TITLE} class="h-14" />
     </a>
 
-    <nav class="navbar flex overflow-x-auto px-4 py-1">
+    <nav
+      class="navbar flex overflow-x-auto overscroll-x-none bg-no-repeat px-4 py-1"
+    >
       <HeaderLink href="/">
         <IconHome /> Home
       </HeaderLink>
@@ -52,8 +54,6 @@ import HeaderLink from './HeaderLink.astro';
       linear-gradient(to right, transparent, white 80%) 100% 0,
       linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent),
       linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent) 100% 0;
-    background-repeat: no-repeat;
-    overscroll-behavior: none;
     background-size:
       100px 100%,
       100px 100%,
