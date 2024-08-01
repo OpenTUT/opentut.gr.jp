@@ -2,7 +2,7 @@
 title: SIMD 命令 でループを高速に その2
 description: ''
 author: りｎ
-date: 2024/07/11
+date: 2024/08/01
 marp: true
 ---
 
