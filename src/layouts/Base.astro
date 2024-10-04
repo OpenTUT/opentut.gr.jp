@@ -2,6 +2,8 @@
 import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
 
+import 'katex/dist/katex.min.css';
+
 export interface Props {
   title: string;
   description: string;
@@ -83,5 +85,11 @@ const { title, description, image } = Astro.props;
     overflow: hidden;
     pointer-events: none;
     z-index: 1;
+  }
+</style>
+
+<style is:global>
+  .katex-display {
+    overflow-y: auto;
   }
 </style>
