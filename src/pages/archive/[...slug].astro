@@ -3,7 +3,7 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import { SITE_TITLE } from '../../consts';
 import { IconCalendarEvent, IconUser } from '@tabler/icons-react';
 import Article from '../../layouts/Article.astro';
-import MarpSwiper from '../../components/MarpSwiper.astro';
+import PDFSwiper from '../../components/PDFSwiper.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('archive');
@@ -16,7 +16,7 @@ type Props = CollectionEntry<'archive'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
-const { title, date, author, marp, description, image } = post.data;
+const { title, date, author, pdf, description, image } = post.data;
 ---
 
 <Article
@@ -48,14 +48,14 @@ const { title, date, author, marp, description, image } = post.data;
   </header>
 
   {
-    marp && (
+    pdf && (
       <div class="-mt-4 mb-8 overflow-hidden rounded-xl border-2 border-gray-200">
-        <MarpSwiper markdown={post.body} />
+        <PDFSwiper src={pdf} />
       </div>
     )
   }
 
-  <section class:list={['prose max-w-none', { 'prose-hr:hidden': marp }]}>
+  <section class:list={['prose max-w-none']}>
     <Content />
   </section>
 </Article>

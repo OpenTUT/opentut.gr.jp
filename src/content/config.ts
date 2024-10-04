@@ -30,7 +30,7 @@ const archive = defineCollection({
           alt: z.string(),
         })
         .optional(),
-      marp: z.boolean().default(false),
+      pdf: z.string().optional(),
     }),
 });
 

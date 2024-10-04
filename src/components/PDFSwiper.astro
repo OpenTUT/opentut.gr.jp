@@ -1,0 +1,117 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { getDocument } from 'pdfjs-dist/legacy/build/pdf.mjs';
+import { readFile } from 'node:fs/promises';
+import { createCanvas, Canvas } from '@napi-rs/canvas';
+import appRoot from 'app-root-path';
+
+interface Props {
+  src: string;
+}
+
+interface CanvasAndContext {
+  canvas: Canvas | null;
+  context: CanvasRenderingContext2D | null;
+}
+
+class CanvasFactory {
+  create(width: number, height: number) {
+    if (width <= 0 || height <= 0) {
+      throw new Error('Invalid canvas size');
+    }
+    const canvas = createCanvas(width, height);
+    return {
+      canvas,
+      context: canvas.getContext('2d') as unknown as CanvasRenderingContext2D,
+    };
+  }
+
+  reset(canvasAndContext: CanvasAndContext, width: number, height: number) {
+    if (!canvasAndContext.canvas) {
+      throw new Error('Canvas is not specified');
+    }
+    if (width <= 0 || height <= 0) {
+      throw new Error('Invalid canvas size');
+    }
+    canvasAndContext.canvas.width = width;
+    canvasAndContext.canvas.height = height;
+  }
+
+  destroy(canvasAndContext: CanvasAndContext) {
+    if (!canvasAndContext.canvas) {
+      throw new Error('Canvas is not specified');
+    }
+    canvasAndContext.canvas = null;
+    canvasAndContext.context = null;
+  }
+}
+
+const canvasFactory = new CanvasFactory();
+
+const pdfDocument = await getDocument({
+  data: await readFile(appRoot.resolve(Astro.props.src)).then(
+    (res) => new Uint8Array(res),
+  ),
+  cMapUrl: appRoot.resolve('/node_modules/pdfjs-dist/cmaps'),
+  cMapPacked: true,
+  standardFontDataUrl: appRoot.resolve(
+    '/node_modules/pdfjs-dist/standard_fonts',
+  ),
+  canvasFactory,
+}).promise;
+
+const images = [];
+
+for (let i = 1; i <= pdfDocument.numPages; ++i) {
+  const page = await pdfDocument.getPage(i);
+  const viewport = page.getViewport({ scale: 1.0 });
+  const { canvas, context } = canvasFactory.create(
+    viewport.width,
+    viewport.height,
+  );
+
+  await page.render({
+    canvasContext: context,
+    viewport,
+  }).promise;
+  const image = canvas.toDataURL('image/webp');
+  images.push(image);
+  page.cleanup();
+}
+---
+
+<div class="swiper">
+  <div class="swiper-wrapper" id="pdf-swiper">
+    {images.map((image) => <img src={image} class="swiper-slide" />)}
+  </div>
+  <div
+    class="swiper-pagination [&>.swiper-pagination-bullet-active]:!bg-tut-red"
+  >
+  </div>
+  <div class="swiper-button-prev !text-tut-red"></div>
+  <div class="swiper-button-next !text-tut-red"></div>
+</div>
+
+<script>
+  import Swiper from 'swiper';
+  import { Keyboard, Navigation, Pagination } from 'swiper/modules';
+
+  new Swiper('.swiper', {
+    keyboard: {
+      enabled: true,
+    },
+    modules: [Keyboard, Navigation, Pagination],
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    speed: 800,
+  });
+</script>
