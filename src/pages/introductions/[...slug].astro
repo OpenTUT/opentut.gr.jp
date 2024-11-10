@@ -6,13 +6,13 @@ import Article from '../../layouts/Article.astro';
 import PDFSwiper from '../../components/PDFSwiper.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('introduction');
+  const posts = await getCollection('introductions');
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: post,
   }));
 }
-type Props = CollectionEntry<'introduction'>;
+type Props = CollectionEntry<'introductions'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
