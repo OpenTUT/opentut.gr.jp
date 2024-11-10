@@ -7,24 +7,24 @@ import { IconCalendarEvent, IconUser } from '@tabler/icons-react';
 import { convertPDF } from '../../convertPDF';
 import appRoot from 'app-root-path';
 
-const introduction = (await getCollection('introductions')).sort(
+const introductions = (await getCollection('introductions')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
 <Base title={`Introduction | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
   <div class="mx-auto max-w-screen-lg px-4 py-8">
-    <h1 class="mb-8 text-4xl font-bold">Introduction</h1>
+    <h1 class="mb-8 text-4xl font-bold">Introductions</h1>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
       {
-        introduction.map(async (post) => {
+        introductions.map(async (post) => {
           const canvases = post.data.pdf
             ? await convertPDF(appRoot.resolve(post.data.pdf), true)
             : null;
           return (
-            <introduction class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-colors hover:text-tut-red">
-              <a href={`/introduction/${post.slug}`}>
+            <introductions class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-colors hover:text-tut-red">
+              <a href={`/introductions/${post.slug}`}>
                 {post.data.image ? (
                   <Image
                     src={post.data.image.src}
@@ -43,7 +43,7 @@ const introduction = (await getCollection('introductions')).sort(
                   </div>
                 )}
               </a>
-              <a href={`/introduction/${post.slug}`}>
+              <a href={`/introductions/${post.slug}`}>
                 <div class="flex-grow p-4">
                   <h2 class="mb-4 text-2xl font-bold">{post.data.title}</h2>
                   <div class="mb-2 flex gap-1 text-gray-500">
@@ -63,7 +63,7 @@ const introduction = (await getCollection('introductions')).sort(
                   </div>
                 </div>
               </a>
-            </introduction>
+            </introductions>
           );
         })
       }

@@ -40,6 +40,7 @@ const introductions = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
+      author: z.string(),
       date: z.coerce.date(),
       image: z
         .object({
@@ -47,6 +48,7 @@ const introductions = defineCollection({
           alt: z.string(),
         })
         .optional(),
+      pdf: z.string().optional(),
     }),
 });
 

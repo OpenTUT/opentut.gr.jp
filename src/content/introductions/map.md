@@ -1,10 +1,10 @@
 ---
-title: 'キャンパスマップの作成'
+marp: true
+title: '整数線形計画問題'
 description: ''
-date: '2024/06/14'
 author: 'horih'
-date: '2024/11/03'
-pdf: '/pdf/archive/button.pdf'
+date: '2024/11/10'
+pdf: '/pdf/archive/ilp.pdf'
 ---
 
 ## 概要
