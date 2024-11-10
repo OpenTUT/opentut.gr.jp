@@ -1,21 +1,22 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import { SITE_TITLE } from '../../consts';
-import { IconCalendarEvent } from '@tabler/icons-react';
+import { IconCalendarEvent, IconUser } from '@tabler/icons-react';
 import Article from '../../layouts/Article.astro';
+import PDFSwiper from '../../components/PDFSwiper.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('introductions');
+  const posts = await getCollection('introduction');
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: post,
   }));
 }
-type Props = CollectionEntry<'introductions'>;
+type Props = CollectionEntry<'introduction'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
-const { title, date, description, image } = post.data;
+const { title, date, author, pdf, description, image } = post.data;
 ---
 
 <Article
@@ -27,7 +28,7 @@ const { title, date, description, image } = post.data;
     <h1 class="mb-8 text-3xl font-bold">
       {title}
     </h1>
-    <div class="flex gap-1 text-gray-500">
+    <div class="mb-2 flex gap-1 text-gray-500">
       <IconCalendarEvent />
       <time datetime={date.toISOString()}>
         {
@@ -40,9 +41,21 @@ const { title, date, description, image } = post.data;
         }
       </time>
     </div>
+    <div class="flex gap-1 text-gray-500">
+      <IconUser />
+      {author}
+    </div>
   </header>
 
-  <section class="prose max-w-none">
+  {
+    pdf && (
+      <div class="-mt-4 mb-8 overflow-hidden rounded-xl border-2 border-gray-200">
+        <PDFSwiper src={pdf} />
+      </div>
+    )
+  }
+
+  <section class:list={['prose max-w-none']}>
     <Content />
   </section>
 </Article>
