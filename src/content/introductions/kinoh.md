@@ -4,7 +4,7 @@ title: '昨日'
 description: ''
 author: '昨日'
 date: '2024/11/10'
-pdf: '/pdf/Intro/kinoh.pdf'
+pdf: '/pdf/introductions/kinoh.pdf'
 ---
 <!--
 headingDivider: 2
