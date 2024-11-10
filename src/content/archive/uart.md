@@ -4,7 +4,7 @@ description: ''
 author: りｎ
 date: 2024/10/27
 marp: false
-pdf: '/pdf/uart.pdf'
+pdf: '/pdf/lt/uart.pdf'
 ---
 
 # 単純で無責任なUART

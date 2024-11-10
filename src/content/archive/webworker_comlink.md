@@ -4,7 +4,7 @@ description: ''
 author: りｎ
 date: 2024/10/15
 marp: true
-pdf: '/pdf/webworker_comlink.pdf'
+pdf: '/pdf/lt/webworker_comlink.pdf'
 ---
 
 # Web Workerと、それを便利にするComlinkライブラリの紹介

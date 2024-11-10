@@ -4,7 +4,7 @@ title: 'ボタンを盗む'
 description: ''
 author: '昨日'
 date: '2024/11/03'
-pdf: '/pdf/button.pdf'
+pdf: '/pdf/lt/button.pdf'
 ---
 <!--
 headingDivider: 2
