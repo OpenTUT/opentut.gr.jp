@@ -7,7 +7,7 @@ import { IconCalendarEvent, IconUser } from '@tabler/icons-react';
 import { convertPDF } from '../../convertPDF';
 import appRoot from 'app-root-path';
 
-const introduction = (await getCollection('introduction')).sort(
+const introduction = (await getCollection('introductions')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
