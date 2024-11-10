@@ -4,7 +4,7 @@ title: 'ゆる自然言語処理 -word2vec編-'
 description: ''
 author: '昨日'
 date: '2024/06/20'
-pdf: '/pdf/lt/word2vec.pdf'
+pdf: '/pdf/archive/word2vec.pdf'
 ---
 # ゆる自然言語処理 -word2vec編-
 ---

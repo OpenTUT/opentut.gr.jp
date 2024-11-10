@@ -4,7 +4,7 @@ title: '整数線形計画問題'
 description: ''
 author: 'horih'
 date: '2024/11/10'
-pdf: '/pdf/lt/ilp.pdf'
+pdf: '/pdf/archive/ilp.pdf'
 ---
 # 組み合わせ最適化
 ---

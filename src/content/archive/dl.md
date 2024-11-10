@@ -5,7 +5,7 @@ author: "hori"
 date: "2024/09/19"
 marp: true
 paginate: true
-pdf: '/pdf/lt/dl.pdf'
+pdf: '/pdf/archive/dl.pdf'
 ---
 <!-- _class: title -->
 # Deep Learning -強化学習編-

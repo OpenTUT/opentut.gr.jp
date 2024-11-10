@@ -4,7 +4,7 @@ description: ""
 author: "hori"
 date: "2024/07/04"
 marp: true
-pdf: '/pdf/lt/pip.pdf'
+pdf: '/pdf/archive/pip.pdf'
 ---
 
 # Python の ProjectManager って結局何がいいの？

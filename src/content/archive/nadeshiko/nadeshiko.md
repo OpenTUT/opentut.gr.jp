@@ -4,7 +4,7 @@ title: '【ギャルでもできる】プログラミング言語「なでしこ
 description: ''
 author: '昨日'
 date: '2024/09/12'
-pdf: '/pdf/lt/nadeshiko.pdf'
+pdf: '/pdf/archive/nadeshiko.pdf'
 ---
 <!--
 headingDivider: 2

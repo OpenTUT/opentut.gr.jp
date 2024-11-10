@@ -4,7 +4,7 @@ title: 'Node.js + WebSocketでピクトチャットをつくる'
 description: ''
 author: '昨日'
 date: '2024/04/18'
-pdf: '/pdf/lt/pictochat.pdf'
+pdf: '/pdf/archive/pictochat.pdf'
 ---
 # Node.js + WebSocketでピクトチャットをつくる
 ---
