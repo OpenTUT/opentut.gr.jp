@@ -4,6 +4,7 @@ title: 'nohupでのbg処理の終了をSlackに通知する'
 description: ''
 author: '昨日'
 date: '2024/07/25'
+pdf: '/pdf/lt/nohup.pdf'
 ---
 <!--
 headingDivider: 2

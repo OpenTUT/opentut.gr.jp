@@ -4,6 +4,7 @@ title: "光電融合チップとは"
 description: ""
 author: "hori"
 date: "2024/06/27"
+pdf: '/pdf/lt/phototransistor.pdf'
 ---
 
 # 光電融合チップとは

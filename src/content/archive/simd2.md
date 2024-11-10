@@ -4,6 +4,7 @@ description: ''
 author: りｎ
 date: 2024/08/01
 marp: true
+pdf: '/pdf/lt/simd2.pdf'
 ---
 
 # SIMD 命令 でループを高速に その2

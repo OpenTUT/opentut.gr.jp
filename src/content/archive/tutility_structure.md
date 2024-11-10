@@ -4,6 +4,7 @@ description: ''
 author: りｎ
 date: 2024/04/25
 marp: true
+pdf: '/pdf/lt/tutility_structure.pdf'
 ---
 
 # TUTilityの構造

@@ -4,6 +4,7 @@ title: "今後のLT会の資料について"
 description: ""
 author: "hori"
 date: "2024/06/20"
+pdf: '/pdf/lt/blogupdate.pdf'
 ---
 # 今後のLT会の資料について
 ---
