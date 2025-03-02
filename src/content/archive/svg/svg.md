@@ -50,7 +50,7 @@ headingDivider: 2
 </body>
 ```
 
-- 作成したファイル(利用は自己責任でお願いします): https://github.com/yif11/svg
+- ためしに作成したファイル: https://github.com/yif11/svg
 
 ## 実行結果
 IPアドレスやブラウザ，ユーザエージェントなどの情報を表示してみる
