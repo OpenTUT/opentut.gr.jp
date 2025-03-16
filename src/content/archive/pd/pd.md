@@ -21,7 +21,8 @@ pdf: '/pdf/archive/pd.pdf'
  - ケーブル自体が〇ぬ (eMarker)
 ---
 ### TypeCの信号線
-<img src="image.png" width="35%">
+<!-- <img src="image.png" width="35%"> -->
+![](image.png)
 
 --- 
 
@@ -31,7 +32,8 @@ pdf: '/pdf/archive/pd.pdf'
   - CCを5.1kΩでGNDに接続
   - プルダウン側が電源受電側(シンク) 
   - プルアップ側が電源供給側(ソース)　抵抗値が供給可能電流
-<img src="pd.png" width="30%">
+<!-- <img src="pd.png" width="30%"> -->
+![](pd.png)
 
 --- 
 ### PDで電源供給したいとき
