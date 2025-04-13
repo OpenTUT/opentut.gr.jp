@@ -22,22 +22,30 @@ https://github.com/yif11/dithering_py
 
 ## ナイーブな量子化
 画像をグレースケールに変換し，各ピクセルを 0 or 255 に変換
-<img src="./orig.png"> <img src="./simple.png">
+<!-- <img src="./orig.png"> <img src="./simple.png"> -->
+![](orig.png)
+![](simple.png)
 
 ## 誤差を右隣に拡散
 あるピクセルの誤差をそのまま右隣に拡散（重み1）
 ナイーブなものより少し自然に見えるが，ところどころ違和感がある
-<img src="./orig.png"> <img src="./rd.png">
+<!-- <img src="./orig.png"> <img src="./rd.png"> -->
+![](orig.png)
+![](rd.png)
 
 ## Floyd-Steinberg Dithering
 誤差を，右隣と左下，下，右下方向にそれぞれ 7/16, 3/16, 5/16, 1/16 の重みをつけて拡散
 右隣のみへの拡散と比べて違和感が減少 & 見やすくなった
-<img src="./orig.png"> <img src="./fsd.png">
+<!-- <img src="./orig.png"> <img src="./fsd.png"> -->
+![](orig.png)
+![](fsd.png)
 
 ## Atkinson Dithering
 誤差を，右と下にそれぞれ2ピクセル，左下と右下にそれぞれ1ピクセル，合計6箇所に 1/8 ずつ重みをつけて拡散 **（2/8 分の誤差は捨てられる）**
 Floyd-Steinberg Dithering より誤差が大きいが，逆に良い印象を受ける
-<img src="./orig.png"> <img src="./ad.png">
+<!-- <img src="./orig.png"> <img src="./ad.png"> -->
+![](orig.png)
+![](ad.png)
 
 ## まとめ
 ディザリング手法によって印象が変わる
