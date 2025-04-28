@@ -5,8 +5,8 @@ author: org
 date: 2025/04/29
 marp: true
 image:
-  src: ./workshop.png
-  alt: workshop_flyer
+  src: ./finished_product.png
+  alt: finished_product
 ---
 
 # ポートフォリオ制作ドキュメント
