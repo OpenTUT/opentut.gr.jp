@@ -303,7 +303,7 @@ image:
             -  Flex コンテナに余裕がなくなっても、この要素の大きさをキープ(`shrink-0`)
 
         - 右側の要素
-            - `serviceName`を`text-xl font-semibold`で凶兆
+            - `serviceName`を`text-xl font-semibold`で強調
             - `userName`
             - `description`
 
