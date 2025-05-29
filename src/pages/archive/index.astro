@@ -23,7 +23,7 @@ const archive = (await getCollection('archive')).sort(
             ? await convertPDF(appRoot.resolve(post.data.pdf), true)
             : null;
           return (
-            <archive class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-colors hover:text-tut-red">
+            <archive class="hover:text-tut-red flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-colors">
               <a href={`/archive/${post.slug}`}>
                 {post.data.image ? (
                   <Image

@@ -59,7 +59,7 @@ export function Terminal() {
         </div>
       ))}
       <div className="flex">
-        <span className="mr-2 text-tut-red">{'$'}</span>
+        <span className="text-tut-red mr-2">{'$'}</span>
         <form onSubmit={handleSubmit} className="w-full">
           <input
             type="text"

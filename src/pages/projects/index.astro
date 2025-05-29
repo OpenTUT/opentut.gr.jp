@@ -17,7 +17,7 @@ const projects = (await getCollection('projects')).sort(
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
       {
         projects.map((post) => (
-          <archive class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-colors hover:text-tut-red">
+          <archive class="hover:text-tut-red flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-colors">
             <a href={`/projects/${post.slug}`}>
               {post.data.image ? (
                 <Image
