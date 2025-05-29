@@ -67,7 +67,6 @@ export async function convertPDF(src: string, frontOnly = false) {
       canvasContext: context,
       viewport,
     }).promise;
-    const image = canvas.toDataURL('image/webp');
     canvases.push(canvas);
     page.cleanup();
 
