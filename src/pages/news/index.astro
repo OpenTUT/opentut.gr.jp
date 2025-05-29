@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { IconCalendarEvent } from '@tabler/icons-react';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Base title={`News | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
