@@ -1,16 +1,16 @@
 import react from '@astrojs/react';
-import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import { type AstroUserConfig } from 'astro';
+import rehypeKatex from 'rehype-katex';
 import behead from 'remark-behead';
 import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
 
-// https://astro.build/config
-export default defineConfig({
+export default {
   site: 'https://opentut.gr.jp',
+  build: { format: 'file' },
   integrations: [react(), tailwind()],
   markdown: {
     remarkPlugins: [[behead, { minDepth: 2 }], remarkMath],
     rehypePlugins: [rehypeKatex],
   },
-});
+} satisfies AstroUserConfig;
