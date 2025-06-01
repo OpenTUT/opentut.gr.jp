@@ -1,10 +1,37 @@
 ---
+import { array } from 'astro:schema';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
-import Base from '../../layouts/Base.astro';
+import { IconCalendarFilled } from '@tabler/icons-react';
+import Article from '../../layouts/Article.astro';
 
 export const Metadata = {
-  lastUpdated: '2025-05-30T00:17:54.102Z',
+  lastUpdated: '2025-06-01T00:17:54.102Z',
 };
+
+const items = [
+    {
+      date: '2025-06-01',
+      title: '「お知らせ機能」の追加',
+      content: 'TUTilityに「お知らせ」機能を追加しました．'
+    }
+  ]
 ---
 
-<Base title={`News | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+<Article title={`About | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+  <h1 slot="header" class="text-4xl font-bold">News</h1>
+  {
+    items.sort((i,j) => new Date(j.date).getTime() - new Date(i.date).getTime())
+    .map(({date,title,content},idx,arr) => (
+        <article class="mb-5">
+            <header class="mb-2 flex items-center">
+              <IconCalendarFilled size={18}/>
+              <time datetime={date}>{date}</time>  
+              <h3 class="ml-3 font-semibold">{title}</h3>
+            </header>
+            <p class="ml-4">
+              {content}
+            </p>
+        </article>
+    ))
+  }
+</Article>
